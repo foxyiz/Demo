@@ -30,30 +30,21 @@ FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 ```
 FoXYiZ/
 ├── Foxyiz.exe # Framework executable
-├── fEngine.py # Core Framework engine (for developers)
-├── fStart.json # Root configuration file (no 'drivers' section)
-├── Foxyiz.spec # PyInstaller spec file
+├── fStart.json # Root configuration file
 ├── x/ # Automation scripts (bundled)
-│   └── xActions.py # Reusable automation actions (for developers)
 ├── y/ # Input automation tasks (yPADs)
-│   ├── Mix.json # Example yPAD configuration
-│   ├── Mix/ # Example yPAD directory
-│   │   ├── y1Plans.csv
-│   │   ├── y2Actions.csv
-│   │   └── y3Designs.csv
 │   ├── FoXYiZ.json # FoXYiZ website testing yPAD
 │   ├── FoXYiZ/ # FoXYiZ website testing directory
 │   │   ├── y1Plans.csv
 │   │   ├── y2Actions.csv
 │   │   └── y3Designs.csv
-├── z/ # Output, logs, and dashboards (keep this folder; clean up old files as needed)
-│   ├── zDash_template.html # Dashboard template
-│   └── 20241201_1430_Mix/ # Results directory (timestamped)
-│       ├── Mix_zResults.csv
-│       ├── Mix_zDash.html
-│       └── _errors.csv
-└── _others/ # Documentation and utilities
-    └── Readme.txt # This documentation file
+└── z/ # Output, logs, and dashboards (keep this folder; clean up old files as needed)
+    ├── zDash_template.html # Dashboard template
+    └── 20241201_1430_Math/ # Results directory (timestamped)
+       ├── Math_zResults.csv
+        ├── Math_zDash.html
+        └── _errors.csv
+
 ```
 
 ## Getting Started

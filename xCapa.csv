@@ -1,0 +1,43 @@
+Module,Action,Doc,Input,Output
+UI,xOpenBrowser,Open a web browser using system PATH,browser_type,Browser opened
+UI,xNavigate,Navigate to a URL,url,Navigated to URL
+UI,xType,Type text into an element,text;locator,Text entered
+UI,xGetText,Get text from an element,locator,Text content
+UI,xClick,Click an element,locator,Clicked element
+UI,xSelectDropdown,Select an option from a dropdown,locator;value,Selected value
+UI,xWaitFor,Wait for an element to be present,locator,Element is present
+UI,xCloseBrowser,Close the browser,,Browser closed
+UI,xIsChecked,Check if a checkbox is checked,locator,checked/unchecked
+UI,xDragAndDrop,Drag and drop an element,source_locator;target_locator,Drag and drop performed
+UI,xUploadFile,Upload a file,locator;file_path,File uploaded
+UI,xGetCurrentUrl,Get the current URL,,URL string
+UI,xGetTitle,Get the page title,,Title string
+UI,xHandleAlert,Handle a JavaScript alert,action (accept/dismiss/type:text),Alert action result
+UI,xHover,Hover over an element,locator,Hovered over element
+UI,xSendKeys,Send special keys,locator;key_name,Sent key status
+UI,xContextClick,Perform a right-click,locator,Context click performed
+Math,xAdd,Add numbers,v1;v2;...,Sum
+Math,xMinus,Subtract two numbers,v1;v2,Difference
+Math,xMultiply,Multiply numbers,v1;v2;...,Product
+Math,xDiv,Divide two numbers,v1;v2,Quotient
+Math,xCompare,Compare two values,v1;v2,Pass/Fail
+Math,xPower,Raise number to power,v1;v2,Result
+Math,xModulo,Modulo operation,v1;v2,Remainder
+Math,xRound,Round a number,number;places,Rounded value
+API,xGet,Send a GET request,base_url;endpoint;[api_key],Status code
+API,xPost,Send a POST request,base_url;endpoint;payload_path;[api_key],Status code
+API,xPut,Send a PUT request,base_url;endpoint;payload_path;[api_key],Status code
+API,xDelete,Send a DELETE request,base_url;endpoint;[api_key],Status code
+API,xGetAuthToken,Retrieve an authentication token,auth_url;payload_path,Token retrieved/failed
+JSON,xExtractJson,Extract a value from the last API response JSON,key_path,Value
+JSON,xCompareJson,Compare a JSON value with an expected value,key_path;expected_value,Pass/Fail
+JSON,xValidateJson,Validate if a key exists in the JSON response,key_path,True/False
+AI,xTextPrompt,Send a text prompt to an AI service,api_endpoint;api_key;prompt,AI response
+AI,xContextPrompt,Send a context-aware prompt to an AI service,api_endpoint;api_key;context_file;prompt,AI response
+SAP,xOpenSAPGUI,Open SAP GUI,connection_name,SAP GUI session opened
+SAP,xLogin,Log into SAP,user;password;client,Login Successful
+SAP,xVerifyScreen,Verify screen text,expected_text,True/False
+SAP,xExecuteTransaction,Execute SAP transaction,tcode,Transaction executed
+SAP,xEnterParameters,Enter parameters in SAP,params_json,Parameters entered
+SAP,xDownloadData,Trigger SAP data download,,Download initiated
+SAP,xLogout,Log out of SAP,,Logout Successful

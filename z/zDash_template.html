@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dashboard - {{PlanName}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .summary-box {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .summary-box div {
+            flex: 1;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Dashboard - {{PlanName}}</h1>
+
+        <div class="section">
+            <h2>Summary - Plans</h2>
+            <div class="summary-box" id="summary-plans"></div>
+        </div>
+
+        <div class="section">
+            <h2>Summary - Actions</h2>
+            <div class="summary-box" id="summary-actions"></div>
+        </div>
+
+        <div class="section">
+            <h2>Plans</h2>
+            <table id="plans-table">
+                <thead>
+                    <tr>
+                        <th>DesignId</th>
+                        <th>PlanId</th>
+                        <th>Output</th>
+                        <th>Result</th>
+                        <th>Time (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="plans-data"></tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Actions</h2>
+            <table id="actions-table">
+                <thead>
+                    <tr>
+                        <th>DesignId</th>
+                        <th>PlanId</th>
+                        <th>StepId</th>
+                        <th>StepInfo</th>
+                        <th>ActionType</th>
+                        <th>ActionName</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Expected</th>
+                        <th>Result</th>
+                        <th>TimeTaken (s)</th>
+                    </tr>
+                </thead>
+                <tbody id="actions-data"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Data passed from f/fEngine.py
+        const dashboardData = {{DashboardData}};
+
+        // Escape HTML characters to prevent XSS
+        function escapeHtml(text) {
+            if (text == null || text === "") return "";
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+        }
+
+        // Render summary sections
+        function renderSummaries() {
+            const plansSummary = dashboardData.summary_plans;
+            document.getElementById('summary-plans').innerHTML = `
+                <div><p>Total: ${plansSummary.total}</p></div>
+                <div><p>Executed: ${plansSummary.executed}</p></div>
+                <div><p>Pending: ${plansSummary.pending}</p></div>
+                <div><p>Time Taken (s): ${plansSummary.time_taken.toFixed(2)}</p></div>
+                <div><p>Pass: ${plansSummary.pass_count}</p></div>
+                <div><p>Fail: ${plansSummary.fail_count}</p></div>
+            `;
+
+            const actionsSummary = dashboardData.summary_actions;
+            document.getElementById('summary-actions').innerHTML = `
+                <div><p>Total: ${actionsSummary.total}</p></div>
+                <div><p>Executed: ${actionsSummary.executed}</p></div>
+                <div><p>Pending: ${actionsSummary.pending}</p></div>
+                <div><p>Time Taken (s): ${actionsSummary.time_taken.toFixed(2)}</p></div>
+                <div><p>Pass: ${actionsSummary.pass_count}</p></div>
+                <div><p>Fail: ${actionsSummary.fail_count}</p></div>
+            `;
+        }
+
+        // Render plans table
+        function renderPlans() {
+            const plansBody = document.getElementById('plans-data');
+            let html = '';
+            dashboardData.plans.forEach(row => {
+                const resultClass = row.Result.startsWith('Pass') ? 'pass' : 'fail';
+                let outputHtml = escapeHtml(row.Output);
+                if (row.Output.includes('[Link to')) {
+                    const [truncated, linkPart] = row.Output.split('[Link to', 2);
+                    const filename = linkPart.split(']')[0];
+                    outputHtml = `${escapeHtml(truncated)} <a href="${escapeHtml(filename)}" target="_blank">View more</a>`;
+                }
+                html += `
+                    <tr>
+                        <td>${escapeHtml(row.DesignId)}</td>
+                        <td>${escapeHtml(row.PlanId)}</td>
+                        <td>${outputHtml}</td>
+                        <td class="${resultClass}">${escapeHtml(row.Result)}</td>
+                        <td>${escapeHtml(row.Time)}</td>
+                    </tr>
+                `;
+            });
+            plansBody.innerHTML = html;
+        }
+
+        // Render actions table
+        function renderActions() {
+            const actionsBody = document.getElementById('actions-data');
+            let html = '';
+            dashboardData.actions.forEach(row => {
+                const resultClass = row.Result.startsWith('Pass') ? 'pass' : 'fail';
+                let outputHtml = escapeHtml(row.Output);
+                if (row.Output.includes('[Link to')) {
+                    const [truncated, linkPart] = row.Output.split('[Link to', 2);
+                    const filename = linkPart.split(']')[0];
+                    outputHtml = `${escapeHtml(truncated)} <a href="${escapeHtml(filename)}" target="_blank">View more</a>`;
+                }
+                html += `
+                    <tr>
+                        <td>${escapeHtml(row.DesignId)}</td>
+                        <td>${escapeHtml(row.PlanId)}</td>
+                        <td>${escapeHtml(row.StepId)}</td>
+                        <td>${escapeHtml(row.StepInfo)}</td>
+                        <td>${escapeHtml(row.ActionType)}</td>
+                        <td>${escapeHtml(row.ActionName)}</td>
+                        <td>${escapeHtml(row.Input)}</td>
+                        <td>${outputHtml}</td>
+                        <td>${escapeHtml(row.Expected)}</td>
+                        <td class="${resultClass}">${escapeHtml(row.Result)}</td>
+                        <td>${escapeHtml(row.TimeTaken)}</td>
+                    </tr>
+                `;
+            });
+            actionsBody.innerHTML = html;
+        }
+
+        // Initialize dashboard
+        function initDashboard() {
+            renderSummaries();
+            renderPlans();
+            renderActions();
+        }
+
+        // Run initialization
+        initDashboard();
+    </script>
+</body>
+</html>

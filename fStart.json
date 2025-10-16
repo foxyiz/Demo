@@ -1,0 +1,5 @@
+{
+  "configs": ["y/Math.json"],
+  "thread_count": 4,
+  "timeout": 5
+}

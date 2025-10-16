@@ -1,0 +1,62 @@
+Type,DataName,D1,D2,D3
+UI,base_url,https://foxyiz.com/K3,https://foxyiz.com/K3,https://foxyiz.com/K3
+UI,f_engine_url,https://foxyiz.com/K3/f.html,https://foxyiz.com/K3/f.html,https://foxyiz.com/K3/f.html
+UI,y_ypads_url,https://foxyiz.com/K3/y.html,https://foxyiz.com/K3/y.html,https://foxyiz.com/K3/y.html
+UI,z_results_url,https://foxyiz.com/K3/z.html,https://foxyiz.com/K3/z.html,https://foxyiz.com/K3/z.html
+UI,ai_assistant_url,https://foxyiz.com/K3/ai.html,https://foxyiz.com/K3/ai.html,https://foxyiz.com/K3/ai.html
+UI,docs_url,https://foxyiz.com/K3/README.html,https://foxyiz.com/K3/README.html,https://foxyiz.com/K3/README.html
+UI,main_heading_locator,css==h1,css==h1,css==h1
+UI,feature_cards_locator,css==.feature-card,css==.feature-card,css==.feature-card
+UI,f_engine_link_locator,css==a[href="/f.html"],css==a[href="/f.html"],css==a[href="/f.html"]
+UI,y_ypads_link_locator,css==a[href="/y.html"],css==a[href="/y.html"],css==a[href="/y.html"]
+UI,z_results_link_locator,css==a[href="/z.html"],css==a[href="/z.html"],css==a[href="/z.html"]
+UI,ai_assistant_link_locator,css==a[href="/ai.html"],css==a[href="/ai.html"],css==a[href="/ai.html"]
+UI,home_link_locator,css==a[href="/index.html"],css==a[href="/index.html"],css==a[href="/index.html"]
+UI,f_engine_heading_locator,css==h1,css==h1,css==h1
+UI,cloud_section_locator,css==.cloud-section,css==.cloud-section,css==.cloud-section
+UI,local_section_locator,css==.local-section,css==.local-section,css==.local-section
+UI,show_more_cloud_button,css==button:contains("Show More"),css==button:contains("Show More"),css==button:contains("Show More")
+UI,show_more_local_button,css==button:contains("Show More"),css==button:contains("Show More"),css==button:contains("Show More")
+UI,cloud_benefits_list,css==.cloud-benefits,css==.cloud-benefits,css==.cloud-benefits
+UI,local_benefits_list,css==.local-benefits,css==.local-benefits,css==.local-benefits
+UI,download_local_button,css==button:contains("Download Local"),css==button:contains("Download Local"),css==button:contains("Download Local")
+UI,y_ypads_heading_locator,css==h1,css==h1,css==h1
+UI,upload_section_locator,css==.upload-section,css==.upload-section,css==.upload-section
+UI,ypads_table,css==table,css==table,css==table
+UI,math_ypad_cell,css==td:contains("Math"),css==td:contains("Math"),css==td:contains("Math")
+UI,mix_ypad_cell,css==td:contains("Mix"),css==td:contains("Mix"),css==td:contains("Mix")
+UI,ypad_action_button,css==button,css==button,css==button
+UI,z_results_heading_locator,css==h1,css==h1,css==h1
+UI,z_upload_section_locator,css==.upload-section,css==.upload-section,css==.upload-section
+UI,results_table,css==table,css==table,css==table
+UI,no_results_message,css==.no-results,css==.no-results,css==.no-results
+UI,ai_assistant_heading_locator,css==h1,css==h1,css==h1
+UI,context_sources_locator,css==h2:contains("Context Sources"),css==h2:contains("Context Sources"),css==h2:contains("Context Sources")
+UI,ai_chat_section_locator,css==h2:contains("AI Chat"),css==h2:contains("AI Chat"),css==h2:contains("AI Chat")
+UI,quick_prompts_locator,css==h3:contains("Quick Prompts"),css==h3:contains("Quick Prompts"),css==h3:contains("Quick Prompts")
+UI,suggest_optimizations_button,css==button:contains("Suggest Optimizations"),css==button:contains("Suggest Optimizations"),css==button:contains("Suggest Optimizations")
+UI,identify_issues_button,css==button:contains("Identify Issues"),css==button:contains("Identify Issues"),css==button:contains("Identify Issues")
+UI,ai_response_message,css==.ai-response,css==.ai-response,css==.ai-response
+UI,ai_config_section_locator,css==h2:contains("AI Configuration"),css==h2:contains("AI Configuration"),css==h2:contains("AI Configuration")
+UI,search_box_locator,css==input[placeholder*="Search"],css==input[placeholder*="Search"],css==input[placeholder*="Search"]
+UI,search_button_locator,css==button[type="submit"],css==button[type="submit"],css==button[type="submit"]
+UI,search_results,css==.search-results,css==.search-results,css==.search-results
+UI,yplans_upload_button,css==button:contains("yPlans.csv"),css==button:contains("yPlans.csv"),css==button:contains("yPlans.csv")
+UI,yactions_upload_button,css==button:contains("yActions.csv"),css==button:contains("yActions.csv"),css==button:contains("yActions.csv")
+UI,ydesigns_upload_button,css==button:contains("yDesigns.csv"),css==button:contains("yDesigns.csv"),css==button:contains("yDesigns.csv")
+UI,yplans_file_input,css==input[type="file"],css==input[type="file"],css==input[type="file"]
+UI,yactions_file_input,css==input[type="file"],css==input[type="file"],css==input[type="file"]
+UI,ydesigns_file_input,css==input[type="file"],css==input[type="file"],css==input[type="file"]
+UI,add_ypad_set_button,css==button:contains("Add YPAD Set"),css==button:contains("Add YPAD Set"),css==button:contains("Add YPAD Set")
+UI,upload_success_message,css==.success-message,css==.success-message,css==.success-message
+UI,mobile_viewport_size,375x667,375x667,375x667
+UI,desktop_viewport_size,1920x1080,1920x1080,1920x1080
+UI,test_file_path,/y/Mix/y1Plans.csv,/y/Mix/y1Plans.csv,/y/Mix/y1Plans.csv
+UI,test_query,automation,automation,automation
+API,api_signup_endpoint,/api/signup,/api/signup,/api/signup
+API,api_ypads_endpoint,/api/ypads,/api/ypads,/api/ypads
+API,api_ai_generate_endpoint,/api/ai/generate,/api/ai/generate,/api/ai/generate
+API,auth_url,/api/signin,/api/signin,/api/signin
+API,signup_payload,F/signup_payload.json,F/signup_payload.json,F/signup_payload.json
+API,auth_payload,F/auth_payload.json,F/auth_payload.json,F/auth_payload.json
+API,ai_payload,F/ai_payload.json,F/ai_payload.json,F/ai_payload.json

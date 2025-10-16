@@ -1,0 +1,106 @@
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Output,Expected,Critical
+Pet_Add,1,Add new pet to store,API,xPost,base_url;add_pet_endpoint;pet_payload,add_pet_response,200,n
+Pet_Add,2,Validate pet creation,JSON,xValidateJson,id,pet_created,True,n
+Pet_Add,3,Extract pet ID,JSON,xExtractJson,id,pet_id,valid_pet_id,n
+Pet_Add,4,Verify pet name,JSON,xCompareJson,name;pet_name,pet_name_verified,True,n
+Pet_Update,1,Update existing pet,API,xPut,base_url;update_pet_endpoint;updated_pet_payload,update_pet_response,200
+Pet_Update,2,Validate pet update,JSON,xValidateJson,id,pet_updated,True
+Pet_Update,3,Verify updated name,JSON,xCompareJson,name;updated_pet_name,update_verified,True
+Pet_FindByStatus,1,Find pets by status,API,xGet,base_url;find_by_status_endpoint;status_param,pets_by_status_response,200
+Pet_FindByStatus,2,Validate response,JSON,xValidateJson,pets,pets_found,True
+Pet_FindByStatus,3,Extract pet count,JSON,xExtractJson,pets.length,pet_count,5
+Pet_FindByStatus,4,Verify pet count,Math,xCompare,pet_count;0,pets_count_verified,True
+Pet_FindById,1,Find pet by ID,API,xGet,base_url;find_by_id_endpoint;pet_id_param,pet_by_id_response,200
+Pet_FindById,2,Validate pet found,JSON,xValidateJson,id,pet_found,True
+Pet_FindById,3,Verify pet ID,JSON,xCompareJson,id;pet_id,pet_id_verified,True
+Pet_UpdateForm,1,Update pet with form data,API,xPost,base_url;update_form_endpoint;form_data,update_form_response,200
+Pet_UpdateForm,2,Validate form update,JSON,xValidateJson,message,form_update_success,True
+Pet_UpdateForm,3,Verify update message,JSON,xCompareJson,message;Pet updated,form_update_verified,True
+Pet_Delete,1,Delete pet by ID,API,xDelete,base_url;delete_pet_endpoint;pet_id_param,delete_pet_response,200
+Pet_Delete,2,Validate pet deletion,JSON,xValidateJson,message,pet_deleted,True
+Pet_Delete,3,Verify deletion message,JSON,xCompareJson,message;Pet deleted,deletion_verified,True
+Pet_UploadImage,1,Upload pet image,API,xPost,base_url;upload_image_endpoint;image_file,upload_image_response,200
+Pet_UploadImage,2,Validate image upload,JSON,xValidateJson,message,image_uploaded,True
+Pet_UploadImage,3,Verify upload message,JSON,xCompareJson,message;Image uploaded,upload_verified,True
+Store_PlaceOrder,1,Place store order,API,xPost,base_url;place_order_endpoint;order_payload,place_order_response,200
+Store_PlaceOrder,2,Validate order placement,JSON,xValidateJson,id,order_placed,True
+Store_PlaceOrder,3,Extract order ID,JSON,xExtractJson,id,order_id,valid_order_id
+Store_PlaceOrder,4,Verify order status,JSON,xCompareJson,status;placed,order_status_verified,True
+Store_GetOrder,1,Get order by ID,API,xGet,base_url;get_order_endpoint;order_id_param,get_order_response,200
+Store_GetOrder,2,Validate order retrieval,JSON,xValidateJson,id,order_retrieved,True
+Store_GetOrder,3,Verify order ID,JSON,xCompareJson,id;order_id,order_id_verified,True
+Store_DeleteOrder,1,Delete order by ID,API,xDelete,base_url;delete_order_endpoint;order_id_param,delete_order_response,200
+Store_DeleteOrder,2,Validate order deletion,JSON,xValidateJson,message,order_deleted,True
+Store_DeleteOrder,3,Verify deletion message,JSON,xCompareJson,message;Order deleted,order_deletion_verified,True
+Store_GetInventory,1,Get store inventory,API,xGet,base_url;get_inventory_endpoint,get_inventory_response,200
+Store_GetInventory,2,Validate inventory response,JSON,xValidateJson,available,inventory_retrieved,True
+Store_GetInventory,3,Extract available count,JSON,xExtractJson,available,available_count,10
+Store_GetInventory,4,Verify inventory data,Math,xCompare,available_count;0,inventory_verified,True
+User_Create,1,Create new user,API,xPost,base_url;create_user_endpoint;user_payload,create_user_response,200
+User_Create,2,Validate user creation,JSON,xValidateJson,message,user_created,True
+User_Create,3,Verify creation message,JSON,xCompareJson,message;User created,user_creation_verified,True
+User_CreateWithArray,1,Create users with array,API,xPost,base_url;create_users_array_endpoint;users_array_payload,create_users_array_response,200
+User_CreateWithArray,2,Validate users creation,JSON,xValidateJson,message,users_created,True
+User_CreateWithArray,3,Verify creation message,JSON,xCompareJson,message;Users created,users_array_creation_verified,True
+User_CreateWithList,1,Create users with list,API,xPost,base_url;create_users_list_endpoint;users_list_payload,create_users_list_response,200
+User_CreateWithList,2,Validate users creation,JSON,xValidateJson,message,users_created,True
+User_CreateWithList,3,Verify creation message,JSON,xCompareJson,message;Users created,users_list_creation_verified,True
+User_Login,1,User login,API,xGet,base_url;user_login_endpoint;login_params,user_login_response,200
+User_Login,2,Validate login success,JSON,xValidateJson,message,login_successful,True
+User_Login,3,Extract session token,JSON,xExtractJson,message,session_token,valid_token
+User_Login,4,Verify login message,JSON,xCompareJson,message;Login successful,login_verified,True
+User_Logout,1,User logout,API,xGet,base_url;user_logout_endpoint,user_logout_response,200
+User_Logout,2,Validate logout success,JSON,xValidateJson,message,logout_successful,True
+User_Logout,3,Verify logout message,JSON,xCompareJson,message;Logout successful,logout_verified,True
+User_GetByUsername,1,Get user by username,API,xGet,base_url;get_user_endpoint;username_param,get_user_response,200
+User_GetByUsername,2,Validate user retrieval,JSON,xValidateJson,username,user_retrieved,True
+User_GetByUsername,3,Verify username,JSON,xCompareJson,username;testuser,username_verified,True
+User_Update,1,Update user,API,xPut,base_url;update_user_endpoint;updated_user_payload,update_user_response,200
+User_Update,2,Validate user update,JSON,xValidateJson,message,user_updated,True
+User_Update,3,Verify update message,JSON,xCompareJson,message;User updated,user_update_verified,True
+User_Delete,1,Delete user,API,xDelete,base_url;delete_user_endpoint;username_param,delete_user_response,200
+User_Delete,2,Validate user deletion,JSON,xValidateJson,message,user_deleted,True
+User_Delete,3,Verify deletion message,JSON,xCompareJson,message;User deleted,user_deletion_verified,True
+Pet_Status_Available,1,Find available pets,API,xGet,base_url;find_available_endpoint,available_pets_response,200
+Pet_Status_Available,2,Validate available pets,JSON,xValidateJson,pets,available_pets_found,True
+Pet_Status_Available,3,Extract available count,JSON,xExtractJson,pets.length,available_count,5
+Pet_Status_Available,4,Verify available pets,Math,xCompare,available_count;0,available_verified,True
+Pet_Status_Pending,1,Find pending pets,API,xGet,base_url;find_pending_endpoint,pending_pets_response,200
+Pet_Status_Pending,2,Validate pending pets,JSON,xValidateJson,pets,pending_pets_found,True
+Pet_Status_Pending,3,Extract pending count,JSON,xExtractJson,pets.length,pending_count,3
+Pet_Status_Pending,4,Verify pending pets,Math,xCompare,pending_count;0,pending_verified,True
+Pet_Status_Sold,1,Find sold pets,API,xGet,base_url;find_sold_endpoint,sold_pets_response,200
+Pet_Status_Sold,2,Validate sold pets,JSON,xValidateJson,pets,sold_pets_found,True
+Pet_Status_Sold,3,Extract sold count,JSON,xExtractJson,pets.length,sold_count,2
+Pet_Status_Sold,4,Verify sold pets,Math,xCompare,sold_count;0,sold_verified,True
+Store_Order_Status_Placed,1,Find placed orders,API,xGet,base_url;find_placed_orders_endpoint,placed_orders_response,200
+Store_Order_Status_Placed,2,Validate placed orders,JSON,xValidateJson,orders,placed_orders_found,True
+Store_Order_Status_Placed,3,Extract placed count,JSON,xExtractJson,orders.length,placed_count,3
+Store_Order_Status_Placed,4,Verify placed orders,Math,xCompare,placed_count;0,placed_verified,True
+Store_Order_Status_Approved,1,Find approved orders,API,xGet,base_url;find_approved_orders_endpoint,approved_orders_response,200
+Store_Order_Status_Approved,2,Validate approved orders,JSON,xValidateJson,orders,approved_orders_found,True
+Store_Order_Status_Approved,3,Extract approved count,JSON,xExtractJson,orders.length,approved_count,2
+Store_Order_Status_Approved,4,Verify approved orders,Math,xCompare,approved_count;0,approved_verified,True
+Store_Order_Status_Delivered,1,Find delivered orders,API,xGet,base_url;find_delivered_orders_endpoint,delivered_orders_response,200
+Store_Order_Status_Delivered,2,Validate delivered orders,JSON,xValidateJson,orders,delivered_orders_found,True
+Store_Order_Status_Delivered,3,Extract delivered count,JSON,xExtractJson,orders.length,delivered_count,1
+Store_Order_Status_Delivered,4,Verify delivered orders,Math,xCompare,delivered_count;0,delivered_verified,True
+User_Validation,1,Validate user data format,JSON,xValidateJson,username,user_validation_success,True
+User_Validation,2,Validate user email format,JSON,xValidateJson,email,email_validation_success,True
+User_Validation,3,Validate user phone format,JSON,xValidateJson,phone,phone_validation_success,True
+User_Validation,4,Verify validation results,Math,xCompare,validation_count;3,validation_verified,True
+Pet_Validation,1,Validate pet data format,JSON,xValidateJson,name,pet_validation_success,True
+Pet_Validation,2,Validate pet status format,JSON,xValidateJson,status,status_validation_success,True
+Pet_Validation,3,Validate pet category format,JSON,xValidateJson,category,category_validation_success,True
+Pet_Validation,4,Verify validation results,Math,xCompare,validation_count;3,pet_validation_verified,True
+Store_Validation,1,Validate order data format,JSON,xValidateJson,petId,order_validation_success,True
+Store_Validation,2,Validate order quantity format,JSON,xValidateJson,quantity,quantity_validation_success,True
+Store_Validation,3,Validate order status format,JSON,xValidateJson,status,order_status_validation_success,True
+Store_Validation,4,Verify validation results,Math,xCompare,validation_count;3,store_validation_verified,True
+
+
+
+
+
+
+

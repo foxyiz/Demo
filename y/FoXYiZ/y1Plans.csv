@@ -1,15 +1,10 @@
 PlanId,PlanName,DesignId,Run,Tags,Output
-P1,Home_Page_Load,D1,Y,UI,page_status;load_time
-P2,Navigation_Menu_Test,D1,Y,UI,navigation_success
-P3,F_Engine_Page_Test,D1,N,UI,fengine_features_verified
-P4,Y_YPADs_Management,D1,Y,UI,ypads_management_success
-P5,Z_Results_Analytics,D1,N,UI,results_analytics_success
-P6,AI_Assistant_Features,D1,N,UI,ai_features_verified
-P7,Search_Functionality,D1,Y,UI,search_results_verified
-P8,File_Upload_Features,D1,Y,UI,file_upload_success
-P9,Responsive_Design_Test,D1,N,UI,responsive_layout_verified
-P10,User_Authentication,D1,N,UI,auth_status_verified
-P11,API_Integration_Test,D1,N,API,api_responses_verified
-P12,Performance_Monitoring,D1,N,UI,performance_metrics_verified
-P13,Sign_In,D1,Y,UI,auth_signin_status
-P14,Sign_Out,D1,Y,UI,auth_signout_status
+PFoxyiz_OpenBrowser,Open Browser and Navigate to Foxyiz.com,D1,Y,"UI,Foxyiz",browser_opened
+PFoxyiz_Nav_Home,Navigate to Home,D1,Y,"UI,Foxyiz,Navigation",nav_home
+PFoxyiz_Nav_What,Navigate to What?,D1,Y,"UI,Foxyiz,Navigation",nav_what
+PFoxyiz_Nav_LCNC,Navigate to LC/NC,D1,Y,"UI,Foxyiz,Navigation",nav_lcnc
+PFoxyiz_Nav_YPADS,Navigate to YPADS,D1,Y,"UI,Foxyiz,Navigation",nav_ypads
+PFoxyiz_Nav_Features,Navigate to Features,D1,Y,"UI,Foxyiz,Navigation",nav_features
+PFoxyiz_Nav_Industry,Navigate to Industry,D1,Y,"UI,Foxyiz,Navigation",nav_industry
+PFoxyiz_Nav_Demo,Navigate to Demo,D1,Y,"UI,Foxyiz,Navigation",nav_demo
+PFoxyiz_ContactUs,Fill Contact Us Form,D1,Y,"UI,Foxyiz,Contact",contact_form_submitted

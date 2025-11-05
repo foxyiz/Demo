@@ -1,7 +1,0 @@
-{
-    "input_files": {
-        "yPlans": ["y/Petstore_API/y1Plans.csv"],
-        "yActions": ["y/Petstore_API/y2Actions.csv"],
-        "yDesigns": ["y/Petstore_API/y3Designs.csv"]
-    }
-}

@@ -3,229 +3,1102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Dashboard - {{PlanName}}</title>
+    <title>FoXYiZ Test Dashboard - {YPAD_NAME}</title>
     <style>
+        /* Modern CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
         }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
+
+        /* Layout Container */
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 20px;
         }
-        .section {
-            margin-bottom: 40px;
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        .summary-box {
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .summary-card.passed {
+            border-left-color: #22c55e;
+        }
+
+        .summary-card.failed {
+            border-left-color: #ef4444;
+        }
+
+        .summary-card.pending {
+            border-left-color: #f59e0b;
+        }
+
+        .summary-card h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Controls Section */
+        .controls {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
             display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
         }
-        .summary-box div {
+
+        .search-box {
             flex: 1;
-            text-align: center;
+            min-width: 250px;
+            position: relative;
         }
-        table {
+
+        .search-box input {
             width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-        th {
-            background-color: #4CAF50;
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            border-color: #667eea;
             color: white;
         }
-        tr:hover {
-            background-color: #f1f1f1;
+
+        .filter-btn.passed.active {
+            background: #22c55e;
+            border-color: #22c55e;
         }
-        .pass {
-            color: green;
-            font-weight: bold;
+
+        .filter-btn.failed.active {
+            background: #ef4444;
+            border-color: #ef4444;
         }
-        .fail {
-            color: red;
-            font-weight: bold;
+
+        /* Main Content Area */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
         }
-        a {
-            color: #0066cc;
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Results Table */
+        .results-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .results-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .results-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .results-count {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .results-table th {
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #374151;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .results-table th:hover {
+            background: #f1f5f9;
+        }
+
+        .results-table th.sortable::after {
+            content: ' ↕';
+            opacity: 0.5;
+            font-size: 0.75rem;
+        }
+
+        .results-table th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+            color: #667eea;
+        }
+
+        .results-table th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+            color: #667eea;
+        }
+
+        .results-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.875rem;
+            vertical-align: top;
+        }
+
+        .results-table tr {
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        .results-table tr:hover {
+            background: #f8fafc;
+        }
+
+        .results-table tr.selected {
+            background: #eff6ff;
+            border-left: 4px solid #667eea;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-badge.pass {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-badge.fail {
+            background: #fecaca;
+            color: #991b1b;
+        }
+
+        .status-badge.pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .action-btn:hover {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .action-btn.screenshot {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .action-btn.screenshot:hover {
+            background: #bfdbfe;
+        }
+
+        .action-btn.error {
+            background: #fecaca;
+            color: #991b1b;
+        }
+
+        .action-btn.error:hover {
+            background: #fca5a5;
+        }
+
+        /* Details Panel */
+        .details-panel {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .details-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .details-header h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .details-content {
+            padding: 1.5rem;
+        }
+
+        .details-empty {
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+            padding: 3rem 1.5rem;
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 0.875rem;
+            color: #64748b;
+            background: #f8fafc;
+            padding: 0.75rem;
+            border-radius: 6px;
+            border-left: 3px solid #e2e8f0;
+            word-break: break-word;
+        }
+
+        .detail-value.error {
+            background: #fef2f2;
+            border-left-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .detail-value a {
+            color: #2563eb;
             text-decoration: none;
         }
-        a:hover {
+
+        .detail-value a:hover {
             text-decoration: underline;
+        }
+
+        /* Screenshot Thumbnails */
+        .screenshot-thumbnail {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .screenshot-thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-header {
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: background-color 0.15s ease;
+        }
+
+        .modal-close:hover {
+            background: #e2e8f0;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: auto;
+            }
+
+            .filter-buttons {
+                justify-content: center;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .details-panel {
+                position: static;
+            }
+
+            .table-container {
+                font-size: 0.75rem;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: #64748b;
+        }
+
+        .loading::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e2e8f0;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .font-mono {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Test Dashboard - {{PlanName}}</h1>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>FoXYiZ Test Dashboard</h1>
+            <p>Test Suite: <strong>{YPAD_NAME}</strong> | Generated: <strong>{GENERATION_TIME}</strong></p>
+        </header>
 
-        <div class="section">
-            <h2>Summary - Plans</h2>
-            <div class="summary-box" id="summary-plans"></div>
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h3>Total Tests</h3>
+                <div class="value" id="total-tests">{TOTAL_ACTIONS}</div>
+            </div>
+            <div class="summary-card passed">
+                <h3>Passed</h3>
+                <div class="value" id="passed-tests">{PASSED_ACTIONS}</div>
+            </div>
+            <div class="summary-card failed">
+                <h3>Failed</h3>
+                <div class="value" id="failed-tests">{FAILED_ACTIONS}</div>
+            </div>
+            <div class="summary-card pending">
+                <h3>Pending</h3>
+                <div class="value" id="pending-tests">{PENDING_ACTIONS}</div>
+            </div>
+            <div class="summary-card">
+                <h3>Duration</h3>
+                <div class="value" id="total-duration">{TOTAL_TIME}s</div>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Summary - Actions</h2>
-            <div class="summary-box" id="summary-actions"></div>
+        <!-- Controls Section -->
+        <div class="controls">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Search by Plan ID, Step Info, Action Name, or tags...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn passed" data-filter="pass">Passed</button>
+                <button class="filter-btn failed" data-filter="fail">Failed</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Plans</h2>
-            <table id="plans-table">
-                <thead>
-                    <tr>
-                        <th>DesignId</th>
-                        <th>PlanId</th>
-                        <th>Output</th>
-                        <th>Result</th>
-                        <th>Time (s)</th>
-                    </tr>
-                </thead>
-                <tbody id="plans-data"></tbody>
-            </table>
-        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Results Table -->
+            <div class="results-section">
+                <div class="results-header">
+                    <h2>Test Results</h2>
+                    <span class="results-count" id="results-count">Showing 0 of 0 results</span>
+                </div>
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-sort="planId">Plan ID</th>
+                                <th class="sortable" data-sort="stepId">Step ID</th>
+                                <th>Step Info</th>
+                                <th>Action</th>
+                                <th class="sortable" data-sort="result">Status</th>
+                                <th class="sortable" data-sort="timeTaken">Duration</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                            <!-- Results will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-        <div class="section">
-            <h2>Actions</h2>
-            <table id="actions-table">
-                <thead>
-                    <tr>
-                        <th>DesignId</th>
-                        <th>PlanId</th>
-                        <th>StepId</th>
-                        <th>StepInfo</th>
-                        <th>ActionType</th>
-                        <th>ActionName</th>
-                        <th>Input</th>
-                        <th>Output</th>
-                        <th>Expected</th>
-                        <th>Result</th>
-                        <th>TimeTaken (s)</th>
-                    </tr>
-                </thead>
-                <tbody id="actions-data"></tbody>
-            </table>
+            <!-- Details Panel -->
+            <div class="details-panel">
+                <div class="details-header">
+                    <h3>Test Details</h3>
+                </div>
+                <div class="details-content">
+                    <div class="details-empty" id="details-empty">
+                        Select a test result to view details
+                    </div>
+                    <div id="details-content" class="hidden">
+                        <!-- Details will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshot Modal -->
+    <div class="modal" id="screenshot-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modal-title">Screenshot</span>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Screenshot">
+            </div>
         </div>
     </div>
 
     <script>
-        // Data passed from f/fEngine.py
-        const dashboardData = {{DashboardData}};
+        // ===== DATA SECTION =====
+        // This section contains the test results data that will be populated by the FoXYiZ engine
+        
+        // MOCK DATA FOR DEMONSTRATION - Replace with actual data from CSV
+        const testResults = [
+            // Example data structure - replace with actual CSV data
+            {
+                designId: "D1",
+                planId: "P001",
+                stepId: "S001",
+                stepInfo: "Login to application",
+                actionType: "xUI",
+                actionName: "xClick",
+                input: "username_field",
+                output: "Successfully clicked username field",
+                expected: "Field should be clickable",
+                result: "Pass",
+                time: "10:30:15",
+                timeTaken: 1.2,
+                critical: "Y",
+                screenshot: "P001_D1_S001.png", // Optional screenshot filename
+                errorDetails: null // Error details if failed
+            },
+            {
+                designId: "D1",
+                planId: "P001",
+                stepId: "S002",
+                stepInfo: "Enter username",
+                actionType: "xUI",
+                actionName: "xType",
+                input: "testuser@example.com",
+                output: "Failed to locate element: username field not found",
+                expected: "Username should be entered",
+                result: "Fail",
+                time: "10:30:17",
+                timeTaken: 5.1,
+                critical: "Y",
+                screenshot: "P001_D1_S002.png",
+                errorDetails: {
+                    type: "ElementNotFound",
+                    message: "Could not locate element with selector: #username",
+                    url: "https://app.example.com/login",
+                    stackTrace: "WebDriverException: Element not found\n  at findElement (driver.js:123)\n  at click (actions.js:45)"
+                }
+            },
+            {
+                designId: "D2",
+                planId: "P002",
+                stepId: "S001",
+                stepInfo: "API Health Check",
+                actionType: "xAPI",
+                actionName: "xGet",
+                input: "https://api.example.com/health",
+                output: '{"status": "healthy", "timestamp": "2024-01-15T10:30:20Z"}',
+                expected: "Status should be healthy",
+                result: "Pass",
+                time: "10:30:20",
+                timeTaken: 0.8,
+                critical: "N",
+                screenshot: null,
+                errorDetails: null
+            }
+        ];
 
-        // Escape HTML characters to prevent XSS
+        // Replace the above mock data with actual data parsing:
+        // const testResults = {RESULTS_DATA_JSON};
+
+        // ===== APPLICATION STATE =====
+        let currentFilter = 'all';
+        let currentSort = { column: null, direction: 'asc' };
+        let filteredResults = [...testResults];
+        let selectedRow = null;
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEventListeners();
+            renderResults();
+            updateSummaryCards();
+        });
+
+        function initializeEventListeners() {
+            // Search input
+            document.getElementById('search-input').addEventListener('input', handleSearch);
+
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', handleFilter);
+            });
+
+            // Sort headers
+            document.querySelectorAll('.sortable').forEach(header => {
+                header.addEventListener('click', handleSort);
+            });
+
+            // Modal close events
+            document.getElementById('screenshot-modal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            // Keyboard events
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+        }
+
+        // ===== FILTERING AND SEARCH =====
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            applyFilters(searchTerm);
+        }
+
+        function handleFilter(e) {
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            currentFilter = e.target.dataset.filter;
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            applyFilters(searchTerm);
+        }
+
+        function applyFilters(searchTerm = '') {
+            filteredResults = testResults.filter(result => {
+                // Status filter
+                const statusMatch = currentFilter === 'all' || 
+                                  (currentFilter === 'pass' && result.result === 'Pass') ||
+                                  (currentFilter === 'fail' && result.result === 'Fail') ||
+                                  (currentFilter === 'pending' && !result.result);
+
+                // Search filter
+                const searchMatch = !searchTerm || 
+                                  result.planId.toLowerCase().includes(searchTerm) ||
+                                  result.stepInfo.toLowerCase().includes(searchTerm) ||
+                                  result.actionName.toLowerCase().includes(searchTerm) ||
+                                  result.actionType.toLowerCase().includes(searchTerm);
+
+                return statusMatch && searchMatch;
+            });
+
+            renderResults();
+        }
+
+        // ===== SORTING =====
+        function handleSort(e) {
+            const column = e.target.dataset.sort;
+            
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
+
+            // Update sort indicators
+            document.querySelectorAll('.sortable').forEach(header => {
+                header.classList.remove('sort-asc', 'sort-desc');
+            });
+            
+            e.target.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+
+            // Sort the filtered results
+            filteredResults.sort((a, b) => {
+                let aVal = a[column];
+                let bVal = b[column];
+
+                // Handle different data types
+                if (column === 'timeTaken') {
+                    aVal = parseFloat(aVal) || 0;
+                    bVal = parseFloat(bVal) || 0;
+                } else {
+                    aVal = String(aVal).toLowerCase();
+                    bVal = String(bVal).toLowerCase();
+                }
+
+                if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
+                if (aVal > bVal) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            renderResults();
+        }
+
+        // ===== RENDERING =====
+        function renderResults() {
+            const tbody = document.getElementById('results-tbody');
+            const resultsCount = document.getElementById('results-count');
+            
+            tbody.innerHTML = '';
+            
+            if (filteredResults.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="text-center" style="padding: 2rem; color: #64748b; font-style: italic;">
+                            No results found matching your criteria
+                        </td>
+                    </tr>
+                `;
+                resultsCount.textContent = 'No results found';
+                return;
+            }
+
+            filteredResults.forEach((result, index) => {
+                const row = createResultRow(result, index);
+                tbody.appendChild(row);
+            });
+
+            resultsCount.textContent = `Showing ${filteredResults.length} of ${testResults.length} results`;
+        }
+
+        function createResultRow(result, index) {
+            const row = document.createElement('tr');
+            row.dataset.index = index;
+            row.addEventListener('click', () => selectRow(row, result));
+
+            // Status badge
+            const statusClass = result.result ? result.result.toLowerCase() : 'pending';
+            const statusBadge = `<span class="status-badge ${statusClass}">${result.result || 'Pending'}</span>`;
+
+            // Action buttons
+            let actionButtons = '';
+            if (result.screenshot) {
+                actionButtons += `<button class="action-btn screenshot" onclick="showScreenshot('${result.screenshot}', '${result.planId} - ${result.stepId}')" title="View Screenshot">📷</button>`;
+            }
+            if (result.result === 'Fail' && result.errorDetails) {
+                actionButtons += `<button class="action-btn error" onclick="showErrorDetails(${index})" title="View Error Details">⚠️</button>`;
+            }
+
+            row.innerHTML = `
+                <td><strong>${result.planId}</strong></td>
+                <td>${result.stepId}</td>
+                <td>${result.stepInfo}</td>
+                <td><code>${result.actionType}</code> → ${result.actionName}</td>
+                <td>${statusBadge}</td>
+                <td>${result.timeTaken ? result.timeTaken.toFixed(2) + 's' : '-'}</td>
+                <td>${actionButtons}</td>
+            `;
+
+            return row;
+        }
+
+        function selectRow(rowElement, result) {
+            // Remove previous selection
+            document.querySelectorAll('.results-table tr.selected').forEach(row => {
+                row.classList.remove('selected');
+            });
+
+            // Add selection to clicked row
+            rowElement.classList.add('selected');
+            selectedRow = result;
+
+            // Show details
+            showDetails(result);
+        }
+
+        function showDetails(result) {
+            const detailsEmpty = document.getElementById('details-empty');
+            const detailsContent = document.getElementById('details-content');
+
+            detailsEmpty.classList.add('hidden');
+            detailsContent.classList.remove('hidden');
+
+            detailsContent.innerHTML = `
+                <div class="detail-section">
+                    <div class="detail-label">Plan & Step</div>
+                    <div class="detail-value">${result.planId} → ${result.stepId}</div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-label">Action</div>
+                    <div class="detail-value"><code>${result.actionType}</code> → ${result.actionName}</div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-label">Step Description</div>
+                    <div class="detail-value">${result.stepInfo}</div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-label">Input</div>
+                    <div class="detail-value font-mono">${result.input || 'N/A'}</div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-label">Expected</div>
+                    <div class="detail-value">${result.expected || 'N/A'}</div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-label">Output</div>
+                    <div class="detail-value ${result.result === 'Fail' ? 'error' : ''}">${result.output || 'N/A'}</div>
+                </div>
+
+                ${result.errorDetails ? `
+                <div class="detail-section">
+                    <div class="detail-label">Error Details</div>
+                    <div class="detail-value error">
+                        <strong>Type:</strong> ${result.errorDetails.type}<br>
+                        <strong>Message:</strong> ${result.errorDetails.message}<br>
+                        ${result.errorDetails.url ? `<strong>URL:</strong> <a href="${result.errorDetails.url}" target="_blank" rel="noopener noreferrer">${result.errorDetails.url}</a><br>` : ''}
+                        ${result.errorDetails.stackTrace ? `<details><summary>Stack Trace</summary><pre class="font-mono" style="margin-top: 0.5rem; font-size: 0.75rem;">${result.errorDetails.stackTrace}</pre></details>` : ''}
+                    </div>
+                </div>
+                ` : ''}
+
+                <div class="detail-section">
+                    <div class="detail-label">Execution Time</div>
+                    <div class="detail-value">${result.time} (${result.timeTaken ? result.timeTaken.toFixed(2) + 's' : 'N/A'})</div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-label">Critical</div>
+                    <div class="detail-value">${result.critical === 'Y' ? '⚠️ Yes' : '✅ No'}</div>
+                </div>
+
+                ${result.screenshot ? `
+                <div class="detail-section">
+                    <div class="detail-label">Screenshot</div>
+                    <div class="detail-value">
+                        <img src="${result.screenshot}" alt="Screenshot" class="screenshot-thumbnail" 
+                             onclick="showScreenshot('${result.screenshot}', '${result.planId} - ${result.stepId}')"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display: none; color: #64748b; font-style: italic;">Screenshot not available</span>
+                    </div>
+                </div>
+                ` : ''}
+            `;
+        }
+
+        // ===== MODAL FUNCTIONS =====
+        function showScreenshot(imageSrc, title) {
+            const modal = document.getElementById('screenshot-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+
+            modalTitle.textContent = `Screenshot - ${title}`;
+            modalImage.src = imageSrc;
+            modalImage.alt = title;
+
+            modal.classList.add('show');
+        }
+
+        function showErrorDetails(index) {
+            const result = filteredResults[index];
+            if (!result.errorDetails) return;
+
+            // For now, we'll show error details in the details panel
+            // You could also create a separate modal for this
+            selectRow(document.querySelector(`tr[data-index="${index}"]`), result);
+        }
+
+        function closeModal() {
+            document.getElementById('screenshot-modal').classList.remove('show');
+        }
+
+        // ===== SUMMARY UPDATES =====
+        function updateSummaryCards() {
+            const totalTests = testResults.length;
+            const passedTests = testResults.filter(r => r.result === 'Pass').length;
+            const failedTests = testResults.filter(r => r.result === 'Fail').length;
+            const pendingTests = testResults.filter(r => !r.result).length;
+            const totalPlans = new Set(testResults.map(r => r.planId)).size;
+            const totalTime = testResults.reduce((sum, r) => sum + (r.timeTaken || 0), 0);
+
+            // These would normally be populated by the template engine
+            // document.getElementById('total-tests').textContent = totalTests;
+            // document.getElementById('passed-tests').textContent = passedTests;
+            // document.getElementById('failed-tests').textContent = failedTests;
+            // document.getElementById('pending-tests').textContent = pendingTests;
+            // document.getElementById('total-plans').textContent = totalPlans;
+            // document.getElementById('total-duration').textContent = totalTime.toFixed(1) + 's';
+        }
+
+        // ===== UTILITY FUNCTIONS =====
+        function formatDuration(seconds) {
+            if (seconds < 60) return `${seconds.toFixed(1)}s`;
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes}m ${remainingSeconds.toFixed(1)}s`;
+        }
+
         function escapeHtml(text) {
-            if (text == null || text === "") return "";
-            return String(text)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;')
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
-        // Render summary sections
-        function renderSummaries() {
-            const plansSummary = dashboardData.summary_plans;
-            document.getElementById('summary-plans').innerHTML = `
-                <div><p>Total: ${plansSummary.total}</p></div>
-                <div><p>Executed: ${plansSummary.executed}</p></div>
-                <div><p>Pending: ${plansSummary.pending}</p></div>
-                <div><p>Time Taken (s): ${plansSummary.time_taken.toFixed(2)}</p></div>
-                <div><p>Pass: ${plansSummary.pass_count}</p></div>
-                <div><p>Fail: ${plansSummary.fail_count}</p></div>
-            `;
-
-            const actionsSummary = dashboardData.summary_actions;
-            document.getElementById('summary-actions').innerHTML = `
-                <div><p>Total: ${actionsSummary.total}</p></div>
-                <div><p>Executed: ${actionsSummary.executed}</p></div>
-                <div><p>Pending: ${actionsSummary.pending}</p></div>
-                <div><p>Time Taken (s): ${actionsSummary.time_taken.toFixed(2)}</p></div>
-                <div><p>Pass: ${actionsSummary.pass_count}</p></div>
-                <div><p>Fail: ${actionsSummary.fail_count}</p></div>
-            `;
+        // ===== EXPORT FUNCTIONS (Optional) =====
+        function exportResults() {
+            // Function to export filtered results as CSV
+            // Implementation would depend on requirements
+            console.log('Export functionality can be added here');
         }
 
-        // Render plans table
-        function renderPlans() {
-            const plansBody = document.getElementById('plans-data');
-            let html = '';
-            dashboardData.plans.forEach(row => {
-                const resultClass = row.Result.startsWith('Pass') ? 'pass' : 'fail';
-                let outputHtml = escapeHtml(row.Output);
-                if (row.Output.includes('[Link to')) {
-                    const [truncated, linkPart] = row.Output.split('[Link to', 2);
-                    const filename = linkPart.split(']')[0];
-                    outputHtml = `${escapeHtml(truncated)} <a href="${escapeHtml(filename)}" target="_blank">View more</a>`;
-                }
-                html += `
-                    <tr>
-                        <td>${escapeHtml(row.DesignId)}</td>
-                        <td>${escapeHtml(row.PlanId)}</td>
-                        <td>${outputHtml}</td>
-                        <td class="${resultClass}">${escapeHtml(row.Result)}</td>
-                        <td>${escapeHtml(row.Time)}</td>
-                    </tr>
-                `;
-            });
-            plansBody.innerHTML = html;
-        }
-
-        // Render actions table
-        function renderActions() {
-            const actionsBody = document.getElementById('actions-data');
-            let html = '';
-            dashboardData.actions.forEach(row => {
-                const resultClass = row.Result.startsWith('Pass') ? 'pass' : 'fail';
-                let outputHtml = escapeHtml(row.Output);
-                if (row.Output.includes('[Link to')) {
-                    const [truncated, linkPart] = row.Output.split('[Link to', 2);
-                    const filename = linkPart.split(']')[0];
-                    outputHtml = `${escapeHtml(truncated)} <a href="${escapeHtml(filename)}" target="_blank">View more</a>`;
-                }
-                html += `
-                    <tr>
-                        <td>${escapeHtml(row.DesignId)}</td>
-                        <td>${escapeHtml(row.PlanId)}</td>
-                        <td>${escapeHtml(row.StepId)}</td>
-                        <td>${escapeHtml(row.StepInfo)}</td>
-                        <td>${escapeHtml(row.ActionType)}</td>
-                        <td>${escapeHtml(row.ActionName)}</td>
-                        <td>${escapeHtml(row.Input)}</td>
-                        <td>${outputHtml}</td>
-                        <td>${escapeHtml(row.Expected)}</td>
-                        <td class="${resultClass}">${escapeHtml(row.Result)}</td>
-                        <td>${escapeHtml(row.TimeTaken)}</td>
-                    </tr>
-                `;
-            });
-            actionsBody.innerHTML = html;
-        }
-
-        // Initialize dashboard
-        function initDashboard() {
-            renderSummaries();
-            renderPlans();
-            renderActions();
-        }
-
-        // Run initialization
-        initDashboard();
+        // Make functions available globally for onclick handlers
+        window.showScreenshot = showScreenshot;
+        window.showErrorDetails = showErrorDetails;
+        window.closeModal = closeModal;
+        window.exportResults = exportResults;
     </script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 {
-  "configs": ["y/Math.json", "y/FoXYiZ.json"],
+  "configs": ["y/Math.json"],
   "thread_count": 4,
-  "timeout": 5
+  "timeout": 5,
+  "headless": true,
+  "debug": false
 }

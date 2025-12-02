@@ -3,20 +3,20 @@ Math_Addition,1,Verify_Math_Addition,xMath,xAdd,v1;v2,vAdd,vAdd,n
 Math_Multiplication,1,Verify_Math_Multiplication,xMath,xMultiply,v1;v2,vMul,276,n
 Math_Power,1,Verify_Math_Multiplication,xMath,xMultiply,v1;v2,vMul,276,n
 Math_Division,1,Verify_Math_Division,xMath,xDiv,v1;v2,vDiv,vDiv,n
-Math_Area,1,Square radius,xMath,xMultiply,v1;v1,vTemp,,n
-Math_Area,2,Multiple res with pi,xMath,xMultiply,vTemp;vPi,vArea,vArea,n
+Math_Area,1,Square radius,xMath,xMultiply,v1;v1,vTempArea,,n
+Math_Area,2,Multiple res with pi,xMath,xMultiply,vTempArea;vPi,vArea,vArea,n
 Math_SquareArea,1,Multiply side with side,xMath,xMultiply,v1;v1,vSquareArea,vSquareArea,n
 Math_TriangleArea,1,Multiply base and height,xMath,xMultiply,vBase;vHeight,vTemp,,n
 Math_TriangleArea,2,Divide by 2,xMath,xDiv,vTemp;vTwo,vTriangleArea,vTriangleArea,n
 Math_Average,1,Add three numbers,xMath,xAdd,v1;v2;v3,vSum,,n
 Math_Average,2,Divide by 3,xMath,xDiv,vSum;vThree,vAverage,vAverage,n
-Math_SimpleInterest,1,Multiply principal rate and time,xMath,xMultiply,vPrincipal;vRate;vTime,vTemp,,n
-Math_SimpleInterest,2,Divide by 100,xMath,xDiv,vTemp;vHundred,vSimpleInterest,vSimpleInterest,n
+Math_SimpleInterest,1,Multiply principal rate and time,xMath,xMultiply,vPrincipal;vRate;vTime,vTempInterest,,n
+Math_SimpleInterest,2,Divide by 100,xMath,xDiv,vTempInterest;vHundred,vSimpleInterest,vSimpleInterest,n
 Math_CylinderVolume,1,Square radius,xMath,xMultiply,vRadius;vRadius,vTempRadius,,n
-Math_CylinderVolume,2,Multiply with pi,xMath,xMultiply,vTempRadius;vPi,vTempArea,,n
-Math_CylinderVolume,3,Multiply with height,xMath,xMultiply,vTempArea;vHeight,vVolume,vVolume,n
-Math_Modulo,1,Get remainder from division,xMath,xModulo,vDividend;vDivisor,vModulo,vModulo,n
-Math_Round,1,Round the number,xMath,xRound,number_to_round;decimal_places,vRounded,vRounded,n
+Math_CylinderVolume,2,Multiply with pi,xMath,xMultiply,vTempRadius;vPi,vTempCylinderArea,,n
+Math_CylinderVolume,3,Multiply with height,xMath,xMultiply,vTempCylinderArea;vHeight,vVolume,vVolume,n
+Math_Modulo,1,Get remainder from division,xMath,xModulo,vDividend;vDivisor,vModulo,1,n
+Math_Round,1,Round the number,xMath,xRound,number_to_round;decimal_places,vRounded,3.14,n
 Math_CompoundInterest,1,Calculate rate as decimal,xMath,xDiv,vRate;vHundred,vRateDecimal,,n
 Math_CompoundInterest,2,Add 1 to rate,xMath,xAdd,vOne;vRateDecimal,vRateFactor,,n
 Math_CompoundInterest,3,Calculate compound factor,xMath,xPower,vRateFactor;vTime,vCompoundFactor,,n

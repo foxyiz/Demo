@@ -1,7 +1,7 @@
 {
   "input_files": {
-    "yPlans": ["y/FoXYiZ/y1Plans.csv","y/FoXYiZ/y1Plans2.csv"],
+    "yPlans": ["y/FoXYiZ/y1Plans.csv"],
     "yActions": ["y/FoXYiZ/y2Actions.csv"],
-    "yDesigns": ["y/FoXYiZ/y3Designs.csv","y/FoXYiZ/y3Designs2.csv","y/FoXYiZ/y3Designs3.csv"]
+    "yDesigns": ["y/FoXYiZ/y3Designs.csv"]
   }
 }

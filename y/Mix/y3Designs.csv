@@ -1,0 +1,140 @@
+Type,DataName,D1,D2,D3
+UI,hk_base_url,https://the-internet.herokuapp.com/,https://the-internet.herokuapp.com/,https://the-internet.herokuapp.com/
+UI,hk_add_remove_elements_link,"css==a[href=""/add_remove_elements/""]","css==a[href=""/add_remove_elements/""]","css==a[href=""/add_remove_elements/""]"
+UI,hk_checkboxes_link,"css==a[href=""/checkboxes""]","css==a[href=""/checkboxes""]","css==a[href=""/checkboxes""]"
+UI,hk_drag_and_drop_link,"css==a[href=""/drag_and_drop""]","css==a[href=""/drag_and_drop""]","css==a[href=""/drag_and_drop""]"
+UI,hk_dropdown_link,"css==a[href=""/dropdown""]","css==a[href=""/dropdown""]","css==a[href=""/dropdown""]"
+UI,hk_file_upload_link,"css==a[href=""/upload""]","css==a[href=""/upload""]","css==a[href=""/upload""]"
+UI,hk_add_element_button,"css==button[onclick=""addElement()""]","css==button[onclick=""addElement()""]","css==button[onclick=""addElement()""]"
+UI,hk_delete_button,css==.added-manually:nth-child(1),css==.added-manually:nth-child(1),css==.added-manually:nth-child(1)
+UI,hk_checkbox1,"css==input[type=""checkbox""]:nth-child(1)","css==input[type=""checkbox""]:nth-child(1)","css==input[type=""checkbox""]:nth-child(1)"
+UI,hk_checkbox2,"css==input[type=""checkbox""]:nth-child(3)","css==input[type=""checkbox""]:nth-child(3)","css==input[type=""checkbox""]:nth-child(3)"
+UI,hk_column_a,css==#column-a,css==#column-a,css==#column-a
+UI,hk_column_b,css==#column-b,css==#column-b,css==#column-b
+UI,hk_dropdown_element,css==#dropdown,css==#dropdown,css==#dropdown
+UI,hk_option1,"css==option[value=""1""]","css==option[value=""1""]","css==option[value=""1""]"
+UI,hk_option2,"css==option[value=""2""]","css==option[value=""2""]","css==option[value=""2""]"
+UI,hk_file_input,css==#file-upload,css==#file-upload,css==#file-upload
+UI,hk_upload_button,css==#file-submit,css==#file-submit,css==#file-submit
+UI,hk_uploaded_file,css==#uploaded-files,css==#uploaded-files,css==#uploaded-files
+UI,hk_expected_added_text,Delete,Delete,Delete
+UI,hk_expected_checkbox1_state,checked,checked,checked
+UI,hk_expected_checkbox2_state,unchecked,unchecked,unchecked
+UI,hk_expected_column_a_text,Column B,Column B,Column B
+UI,hk_expected_column_b_text,Column A,Column A,Column A
+UI,hk_expected_option_text,Option 1,Option 1,Option 1
+UI,hk_expected_upload_text,\y\test.txt,\y\test.txt,\y\test.txt
+UI,hk_dynamic_controls_link,"css==a[href=""/dynamic_controls""]","css==a[href=""/dynamic_controls""]","css==a[href=""/dynamic_controls""]"
+UI,hk_remove_add_button,"css==button[onclick=""swapCheckbox()""]","css==button[onclick=""swapCheckbox()""]","css==button[onclick=""swapCheckbox()""]"
+UI,hk_enable_disable_button,"css==button[onclick=""swapInput()""]","css==button[onclick=""swapInput()""]","css==button[onclick=""swapInput()""]"
+UI,hk_dynamic_checkbox,"css==input[type=""checkbox""]","css==input[type=""checkbox""]","css==input[type=""checkbox""]"
+UI,hk_dynamic_input,"css==#input-example input[type=""text""]","css==#input-example input[type=""text""]","css==#input-example input[type=""text""]"
+UI,hk_loading_bar,css==#loading,css==#loading,css==#loading
+UI,hk_expected_enabled_text,It's enabled!,It's enabled!,It's enabled!
+UI,hk_js_alerts_link,"css==a[href=""/javascript_alerts""]","css==a[href=""/javascript_alerts""]","css==a[href=""/javascript_alerts""]"
+UI,hk_alert_button,"css==button[onclick=""jsAlert()""]","css==button[onclick=""jsAlert()""]","css==button[onclick=""jsAlert()""]"
+UI,hk_confirm_button,"css==button[onclick=""jsConfirm()""]","css==button[onclick=""jsConfirm()""]","css==button[onclick=""jsConfirm()""]"
+UI,hk_prompt_button,"css==button[onclick=""jsPrompt()""]","css==button[onclick=""jsPrompt()""]","css==button[onclick=""jsPrompt()""]"
+UI,hk_result_text,css==#result,css==#result,css==#result
+UI,hk_expected_alert_result,You successfully clicked an alert,You successfully clicked an alert,You successfully clicked an alert
+UI,hk_expected_confirm_result,You clicked: Ok,You clicked: Ok,You clicked: Ok
+UI,hk_expected_prompt_result,You entered: Test,You entered: Test,You entered: Test
+UI,hk_hovers_link,"css==a[href=""/hovers""]","css==a[href=""/hovers""]","css==a[href=""/hovers""]"
+UI,hk_user_avatar,css==.figure:nth-child(3) img,css==.figure:nth-child(3) img,css==.figure:nth-child(3) img
+UI,hk_user_info,css==.figure:nth-child(3) .figcaption h5,css==.figure:nth-child(3) .figcaption h5,css==.figure:nth-child(3) .figcaption h5
+UI,hk_expected_user_info,name: user1,name: user1,name: user1
+UI,hk_key_presses_link,"css==a[href=""/key_presses""]","css==a[href=""/key_presses""]","css==a[href=""/key_presses""]"
+UI,hk_key_input,css==#target,css==#target,css==#target
+UI,hk_key_result,css==#result,css==#result,css==#result
+UI,hk_expected_key_result,You entered: ENTER,You entered: ENTER,You entered: ENTER
+UI,hk_context_menu_link,"css==a[href=""/context_menu""]","css==a[href=""/context_menu""]","css==a[href=""/context_menu""]"
+UI,hk_context_box,css==#hot-spot,css==#hot-spot,css==#hot-spot
+UI,hk_expected_context_alert,You selected a context menu,You selected a context menu,You selected a context menu
+UI,cog_url,https://ui.cogmento.com/?lang=en,https://ui.cogmento.com/?lang=en,https://ui.cogmento.com/?lang=en
+UI,email,user@example.com,,
+UI,password,YOUR_PASSWORD_HERE,,
+UI,email_xpath,xpath==//input[@name='email'],,
+UI,password_xpath,xpath==//input[@name='password'],,
+UI,login_button_xpath,xpath==//div[text()='Login'],,
+UI,email_field,xpath==//input[@name='email'],,
+UI,contacts_menu_xpath,xpath==//span[text()='Contacts'],,
+UI,new_contact_button_xpath,xpath==//button[text()='Create'],,
+UI,first_name_xpath,xpath==//input[@name='first_name'],,
+UI,last_name_xpath,xpath==//input[@name='last_name'],,
+UI,save_button_xpath,xpath==//button[text()='Save'],,
+UI,contact_header_xpath,xpath==//div[@class='ui header item mb5 light-black'],,
+UI,first_name_value,John,,
+UI,last_name_value,Doe,,
+UI,expected_contact_name,John Doe,,
+UI,user_menu_xpath,xpath==//div[@role='listbox'],,
+UI,logout_button_xpath,xpath==//span[text()='Log Out'],,
+UI,dashboard_xpath,xpath==//div[text()='Dashboard'],xpath==//div[text()='Dashboard'],
+Math,v1,12,200,
+Math,v2,23,300,
+Math,vAdd,35,500,
+Math,vSub,-11,100,
+Math,vMul,276,,
+Math,vDiv,0.521739,0.67,
+Math,vArea,452.16,12845,
+Math,vSquare,144,40000,
+Math,vPi,3.14,3.14,
+Math,first_number,10,11,
+Math,second_number,2,22,
+Math,base_number,3,3,
+Math,exponent,2,2,
+Math,number_to_round,3.14159,0.23,
+Math,decimal_places,2,2,
+Math,value_a,15,15,
+Math,value_b,25,25,
+Math,expected_sum,40,40,
+API,base_url_ps,https://petstore.swagger.io/v2,https://petstore.swagger.io/v2,https://petstore.swagger.io/v2
+API,pet_id,1,2,3
+API,pet_endpoint,/pet/1,/pet/2,/pet/3
+API,add_pet_endpoint,/pet,/pet,/pet
+API,pet_payload,/y/API/addPet.json,/y/API/addPet.json,/y/API/addPet.json
+API,expected_name,doggie,doggie,doggie
+API,expected_error,Pet not found,Pet not found,Pet not found
+API,expected_count,3,,
+API,query_params,status=available,,
+API,base_url_rr,https://jsonplaceholder.typicode.com,https://jsonplaceholder.typicode.com,https://jsonplaceholder.typicode.com
+API,user_id,1,2,3
+API,user_endpoint,/users/1,/users/2,/users/3
+API,create_user_endpoint,/users,/users,/users
+API,user_payload,/y/API/addUser.json,/y/API/addUser.json,/y/API/addUser.json
+API,expected_name,John Doe,John Doe,John Doe
+API,expected_error,User not found,User not found,User not found
+API,expected_count,6,7,8
+API,query_params,page=1,page=2,page=3
+API,auth_token,Bearer valid_token,Bearer valid_token,Bearer valid_token
+AI,api_endpoint,https://api.x.ai/v1,,
+AI,api_key,YOUR_XAI_API_KEY_HERE,,
+AI,test_case_file,/path/to/test_case.txt,,
+AI,text_prompt,How many pounds is 77kgs,,
+AI,weather_prompt,How is the temperature in Los Angeles,,
+AI,news_prompt,Headings from CNN,,
+AI,cric_prompt,Who is the captain of Indian cricket team,,
+AI,context_prompt,Analyze this document,,
+UI,hk_test_file,/y/test.txt,/y/test.txt,/y/test.txt
+UI,hk_form_auth_link,"css==a[href='/login']","css==a[href='/login']","css==a[href='/login']"
+UI,hk_username_input,css==#username,css==#username,css==#username
+UI,hk_password_input,css==#password,css==#password,css==#password
+UI,hk_username,tomsmith,tomsmith,tomsmith
+UI,hk_password,YOUR_TEST_PASSWORD_HERE,YOUR_TEST_PASSWORD_HERE,YOUR_TEST_PASSWORD_HERE
+UI,hk_login_button,"css==button[type='submit']","css==button[type='submit']","css==button[type='submit']"
+UI,hk_success_message,css==#flash,css==#flash,css==#flash
+UI,hk_logout_link,"css==a[href='/logout']","css==a[href='/logout']","css==a[href='/logout']"
+UI,hk_challenging_dom_link,"css==a[href='/challenging_dom']","css==a[href='/challenging_dom']","css==a[href='/challenging_dom']"
+UI,hk_challenging_button_1,"css==.button:nth-child(1)","css==.button:nth-child(1)","css==.button:nth-child(1)"
+UI,hk_challenging_button_2,"css==.button:nth-child(2)","css==.button:nth-child(2)","css==.button:nth-child(2)"
+UI,hk_challenging_button_3,"css==.button:nth-child(3)","css==.button:nth-child(3)","css==.button:nth-child(3)"
+UI,hk_floating_menu_link,"css==a[href='/floating_menu']","css==a[href='/floating_menu']","css==a[href='/floating_menu']"
+UI,hk_floating_menu,css==#menu,css==#menu,css==#menu
+UI,hk_floating_home_link,"css==a[href='#home']","css==a[href='#home']","css==a[href='#home']"
+UI,hk_inputs_link,"css==a[href='/inputs']","css==a[href='/inputs']","css==a[href='/inputs']"
+UI,hk_number_input,css==#number,css==#number,css==#number
+UI,hk_text_input,css==#text,css==#text,css==#text
+UI,hk_status_codes_link,"css==a[href='/status_codes']","css==a[href='/status_codes']","css==a[href='/status_codes']"
+UI,hk_status_200_link,"css==a[href='/status_codes/200']","css==a[href='/status_codes/200']","css==a[href='/status_codes/200']"
+UI,hk_status_404_link,"css==a[href='/status_codes/404']","css==a[href='/status_codes/404']","css==a[href='/status_codes/404']"
+UI,hk_add_remove_elements_url,https://the-internet.herokuapp.com/add_remove_elements/,https://the-internet.herokuapp.com/add_remove_elements/,https://the-internet.herokuapp.com/add_remove_elements/
+UI,hk_checkboxes_url,https://the-internet.herokuapp.com/checkboxes,https://the-internet.herokuapp.com/checkboxes,https://the-internet.herokuapp.com/checkboxes

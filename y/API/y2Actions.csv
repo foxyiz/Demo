@@ -1,0 +1,18 @@
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Output,Expected,Critical
+Weather_Current,1,Get current weather by city,xAPI,xGet,base_url;current_weather_endpoint,current_weather_response,200,y
+Weather_Current,2,Validate weather response,xJSON,xValidateJson,cod,weather_validated,True,n
+Weather_Current,3,Extract temperature,xJSON,xExtractJson,main.temp,temperature_kelvin,,n
+Weather_Current,4,Extract city name,xJSON,xExtractJson,name,city_name,,n
+Weather_Current,5,Extract weather description,xJSON,xExtractJson,weather.0.description,weather_description,,n
+Weather_Forecast,1,Get weather forecast by city,xAPI,xGet,base_url;forecast_endpoint,forecast_response,200,y
+Weather_Forecast,2,Validate forecast response,xJSON,xValidateJson,cod,forecast_validated,True,n
+Weather_Forecast,3,Extract forecast count,xJSON,xExtractJson,cnt,forecast_count,,n
+Weather_Forecast,4,Extract first forecast temp,xJSON,xExtractJson,list.0.main.temp,first_forecast_temp,,n
+Weather_ByCoordinates,1,Get weather by coordinates,xAPI,xGet,base_url;coordinates_weather_endpoint,coordinates_weather_response,200,y
+Weather_ByCoordinates,2,Validate coordinates response,xJSON,xValidateJson,cod,coordinates_validated,True,n
+Weather_ByCoordinates,3,Extract coordinates,xJSON,xExtractJson,coord.lat,latitude,,n
+Weather_ByCoordinates,4,Extract longitude,xJSON,xExtractJson,coord.lon,longitude,,n
+Weather_ValidateResponse,1,Validate response structure,xJSON,xValidateJson,cod,response_valid,True,y
+Weather_ValidateResponse,2,Check response code,xJSON,xCompareJson,cod;200,code_verified,True,n
+Weather_ValidateResponse,3,Validate main weather data,xJSON,xValidateJson,main.temp,main_data_valid,True,n
+

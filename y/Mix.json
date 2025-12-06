@@ -1,0 +1,7 @@
+{
+  "input_files": {
+    "yPlans": ["y/Mix/y1Plans.csv"],
+    "yActions": ["y/Mix/y2Actions.csv"],
+    "yDesigns": ["y/Mix/y3Designs.csv"]
+  }
+}

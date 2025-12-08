@@ -4,12 +4,11 @@ FoXYiZ is a **Python-based, low-code/no-code (LCNC) framework** designed for **m
 
 FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 
-*   **fEngine**: The **core engine** entry point is `fEngine.py`.
+*   **fEngine**: The **core engine** entry point is `fEngine`.
 *   **fStart.json**: The root configuration file is `fStart.json` and no longer contains a 'drivers' section; drivers must be in your system PATH.
-*   **Foxyiz.spec**: The build spec is `Foxyiz.spec`.
-*   Files are organized under `x/`, `y/`, and `z/` folders as resources.
+*   Files are organized under `y/` and `z/` folders as resources (Actions are bundled and listed in `xCapa.csv`).
 *   **xAutomation**: Built-in automation capabilities including UI, API, DB, SAP, IoT, and AI integrations.
-*   **yTodo PADs**: Human-readable inputs for your automation tasks, including Plans, Actions, and Designs, defined in CSV format.
+*   **yPADs**: Human-readable inputs for your automation tasks, including Plans, Actions, and Designs, defined in CSV format.
 *   **zAnalytics**: Comprehensive outputs such as results, dashboards, and logs for actionable insights.
 
 ## Key Features
@@ -19,7 +18,7 @@ FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 *   **Human-Readable Inputs**: Define your automation tasks in intuitive CSV files (e.g., `y1Plans.csv`, `y2Actions.csv`, `y3Designs.csv`).
 *   **Comprehensive Outputs**: Get detailed results in `zResults.csv`, visual dashboards in `zDash.html`, and debug logs in `zLog.txt`.
 *   **AI-Powered (Optional & Governed)**: Features AI integration for advanced capabilities such as generating automation plans (yPADs), mind mapping, auto-running, auto-fixing, auto-healing, and predictive analysis.
-*   **Portable**: The core framework is delivered as a single executable (`Foxyiz.exe`).
+*   **Portable**: The core framework is delivered as a single executable (`Foxyiz`).
 *   **Scalable**: Capable of running locally, on the cloud, or in containers.
 *   **Parallel Processing**: Built-in multiprocessing support for concurrent execution of test plans, significantly improving performance.
 *   **Robust Error Handling**: Advanced variable resolution with regex-based replacement, preventing partial matches and URL corruption.
@@ -29,9 +28,8 @@ FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 
 ```
 FoXYiZ/
-├── Foxyiz.exe # Framework executable
+├── Foxyiz # Framework executable
 ├── fStart.json # Root configuration file
-├── x/ # Automation scripts (bundled)
 ├── y/ # Input automation tasks (yPADs)
 │   ├── FoXYiZ.json # FoXYiZ website testing yPAD
 │   ├── FoXYiZ/ # FoXYiZ website testing directory
@@ -53,18 +51,14 @@ FoXYiZ/
 
 *   **Download**: Get the FoXYiZ zip file (typically <50 MB).
 *   **Unpack**: Extract the contents to a directory of your choice, e.g., `C:\Users\Desktop\FoXYiZ\`.
-*   **Requirements**: Python 3.8+ is used by `Foxyiz.exe`, but no direct Python setup is needed for end-users as it's packaged.
+*   **Requirements**: Python 3.8+ is used by `Foxyiz`, but no direct Python setup is needed for end-users as it's packaged.
 
 ### 2. Run the Demo
 
 *   Open a command prompt or terminal in the `FoXYiZ` directory.
 *   Execute the main executable with a configuration file:
     ```
-    Foxyiz.exe --config fStart.json
-    ```
-    Or run specific yPAD configurations:
-    ```
-    Foxyiz.exe --config y/Mix.json
+    Foxyiz --config fStart.json
     ```
 *   **Output**:
     *   The engine will load the specified yPADs (e.g., `y1Plans.csv`, `y2Actions.csv`, `y3Designs.csv`).
@@ -97,14 +91,14 @@ FoXYiZ/
 4.  **Update `fStart.json`**: This central configuration file lists all yPAD configurations that the engine can run. Add your new `y/MyNewPAD.json` to the "configs" array. There is no 'drivers' section; drivers must be in your system PATH.
 5.  **Run**: Execute your new yPAD configuration.
     ```
-    Foxyiz.exe --config fStart.json
+    Foxyiz --config fStart.json
     ```
 
 ### 5. Integrate & Extend
 
 *   **Migrate Existing Tasks**: Convert your current manual or automated tasks into the FoXYiZ CSV format for streamlined execution.
 *   **Export Results**: Utilize the `zResults.csv` output to integrate with other tools like Jira, xRay, or Jenkins for reporting and tracking.
-*   **Extend Capabilities**: For advanced automation needs, developers can customize `xActions.py` to add new functionalities or integrate with specific systems.
+*   **Built-In Capabilities**: Review available actions in `xCapa.csv`; the demo focuses on using these existing capabilities.
 
 ## File Formats
 
@@ -116,7 +110,8 @@ This file configures the overall execution of FoXYiZ, specifying which yPAD conf
 {
   "configs": ["y/Mix.json", "y/FoXYiZ.json"],
   "thread_count": 4,
-  "timeout": 6,
+  "timeout": 5,
+  "headless": true,
   "debug": false
 }
 ```
@@ -125,6 +120,7 @@ This file configures the overall execution of FoXYiZ, specifying which yPAD conf
 - `thread_count`: Number of parallel processes for concurrent plan execution (default: CPU cores, max: 4)
 - `timeout`: Default timeout in seconds for individual actions (default: 6)
 - `debug`: Enable verbose logging and error artifacts (default: false)
+- `headless`: 
 
 ### 2. yPAD JSON (e.g., `y/Mix.json`)
 
@@ -247,7 +243,7 @@ FoXYiZ leverages AI/LLMs to enhance your automation process:
 ## Support
 
 *   **Debug**: Review `zLog.txt` for detailed information on any issues encountered during execution.
-*   **Extend**: Developers can modify `f/fEngine.py` or `xActions.py` to add custom functionalities or integrate with specific systems.
+*   **Extend**: The demo is meant to use the existing capabilities listed in `xCapa.csv`. Custom extensions require the full source distribution.
 *   **Contact**: For further assistance or inquiries, reach out to the FoXYiZ team.
 
 ---
@@ -257,18 +253,4 @@ FoXYiZ leverages AI/LLMs to enhance your automation process:
 
 ## Requirements & Installation
 
-FoXYiZ (IoT project) requires the following Python packages (for developer use):
-
-```
-pandas
-requests
-selenium
-```
-
-To install all dependencies, run:
-
-```
-pip install -r requirements.txt
-```
-
-End-users running Foxyiz.exe do not need to install Python or these packages.
+No Setup required. Just Clone the repo and you are ready to use the FoXYiZ Engine.

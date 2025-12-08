@@ -4,7 +4,7 @@ FoXYiZ is a **Python-based, low-code/no-code (LCNC) framework** designed for **m
 
 FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 
-*   **fEngine**: The **core engine** entry point is `fEngine.py`.
+*   **fEngine**: The **core engine** entry point is `fEngine`.
 *   **fStart.json**: The root configuration file is `fStart.json` and no longer contains a 'drivers' section; drivers must be in your system PATH.
 *   Files are organized under `y/` and `z/` folders as resources (Actions are bundled and listed in `xCapa.csv`).
 *   **xAutomation**: Built-in automation capabilities including UI, API, DB, SAP, IoT, and AI integrations.

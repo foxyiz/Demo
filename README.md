@@ -6,10 +6,9 @@ FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 
 *   **fEngine**: The **core engine** entry point is `fEngine.py`.
 *   **fStart.json**: The root configuration file is `fStart.json` and no longer contains a 'drivers' section; drivers must be in your system PATH.
-*   **Foxyiz.spec**: The build spec is `Foxyiz.spec`.
-*   Files are organized under `x/`, `y/`, and `z/` folders as resources.
+*   Files are organized under `y/` and `z/` folders as resources (Actions are bundled and listed in `xCapa.csv`).
 *   **xAutomation**: Built-in automation capabilities including UI, API, DB, SAP, IoT, and AI integrations.
-*   **yTodo PADs**: Human-readable inputs for your automation tasks, including Plans, Actions, and Designs, defined in CSV format.
+*   **yPADs**: Human-readable inputs for your automation tasks, including Plans, Actions, and Designs, defined in CSV format.
 *   **zAnalytics**: Comprehensive outputs such as results, dashboards, and logs for actionable insights.
 
 ## Key Features
@@ -31,7 +30,6 @@ FoXYiZ breaks automation into a simple formula: **f(x, y) = z**
 FoXYiZ/
 ├── Foxyiz.exe # Framework executable
 ├── fStart.json # Root configuration file
-├── x/ # Automation scripts (bundled)
 ├── y/ # Input automation tasks (yPADs)
 │   ├── FoXYiZ.json # FoXYiZ website testing yPAD
 │   ├── FoXYiZ/ # FoXYiZ website testing directory
@@ -61,10 +59,6 @@ FoXYiZ/
 *   Execute the main executable with a configuration file:
     ```
     Foxyiz.exe --config fStart.json
-    ```
-    Or run specific yPAD configurations:
-    ```
-    Foxyiz.exe --config y/Mix.json
     ```
 *   **Output**:
     *   The engine will load the specified yPADs (e.g., `y1Plans.csv`, `y2Actions.csv`, `y3Designs.csv`).
@@ -104,7 +98,7 @@ FoXYiZ/
 
 *   **Migrate Existing Tasks**: Convert your current manual or automated tasks into the FoXYiZ CSV format for streamlined execution.
 *   **Export Results**: Utilize the `zResults.csv` output to integrate with other tools like Jira, xRay, or Jenkins for reporting and tracking.
-*   **Extend Capabilities**: For advanced automation needs, developers can customize `xActions.py` to add new functionalities or integrate with specific systems.
+*   **Built-In Capabilities**: Review available actions in `xCapa.csv`; the demo focuses on using these existing capabilities.
 
 ## File Formats
 
@@ -116,7 +110,8 @@ This file configures the overall execution of FoXYiZ, specifying which yPAD conf
 {
   "configs": ["y/Mix.json", "y/FoXYiZ.json"],
   "thread_count": 4,
-  "timeout": 6,
+  "timeout": 5,
+  "headless": true,
   "debug": false
 }
 ```
@@ -125,6 +120,7 @@ This file configures the overall execution of FoXYiZ, specifying which yPAD conf
 - `thread_count`: Number of parallel processes for concurrent plan execution (default: CPU cores, max: 4)
 - `timeout`: Default timeout in seconds for individual actions (default: 6)
 - `debug`: Enable verbose logging and error artifacts (default: false)
+- `headless`: 
 
 ### 2. yPAD JSON (e.g., `y/Mix.json`)
 
@@ -247,7 +243,7 @@ FoXYiZ leverages AI/LLMs to enhance your automation process:
 ## Support
 
 *   **Debug**: Review `zLog.txt` for detailed information on any issues encountered during execution.
-*   **Extend**: Developers can modify `f/fEngine.py` or `xActions.py` to add custom functionalities or integrate with specific systems.
+*   **Extend**: The demo is meant to use the existing capabilities listed in `xCapa.csv`. Custom extensions require the full source distribution.
 *   **Contact**: For further assistance or inquiries, reach out to the FoXYiZ team.
 
 ---
@@ -257,18 +253,4 @@ FoXYiZ leverages AI/LLMs to enhance your automation process:
 
 ## Requirements & Installation
 
-FoXYiZ (IoT project) requires the following Python packages (for developer use):
-
-```
-pandas
-requests
-selenium
-```
-
-To install all dependencies, run:
-
-```
-pip install -r requirements.txt
-```
-
-End-users running Foxyiz.exe do not need to install Python or these packages.
+No Setup required. Just Clone the repo and you are ready to use the FoXYiZ Engine.

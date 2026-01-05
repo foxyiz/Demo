@@ -1,0 +1,141 @@
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Output,Expected,Critical
+PLoginTest,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PLoginTest,2,Navigate to URL,xUI,xNavigate,cog_url,,,y
+PLoginTest,3,Type Email,xUI,xType,email;email_xpath,,,y
+PLoginTest,4,Type Password,xUI,xType,password;password_xpath,,,y
+PLoginTest,5,Click Login,xUI,xClick,login_button_xpath,,,y
+PLoginTest,6,Wait for Dashboard,xUI,xWaitFor,user_menu_xpath,,,y
+PLoginTest,7,Verify Title,xUI,xGetTitle,,,,n
+PUI_AddContact,1,Login Reuse,xReuse,PLoginTest,,,,y
+PUI_AddContact,2,Click Contacts Menu,xUI,xClick,contacts_menu_xpath,,Clicked element,n
+PUI_AddContact,3,Click New Contact,xUI,xClick,new_contact_button_xpath,,Clicked element,n
+PUI_AddContact,4,Type First Name,xUI,xType,first_name_value;first_name_xpath,,,n
+PUI_AddContact,5,Type Last Name,xUI,xType,last_name_value;last_name_xpath,,,n
+PUI_AddContact,6,Click Save,xUI,xClick,save_button_xpath,,Clicked element,n
+PUI_AddContact,7,Wait for Save Completion,xUI,xWaitFor,contact_header_xpath,,Element is present,n
+PUI_AddContact,8,Wait for Contact View,xUI,xWaitFor,contact_header_xpath,,Element is present,n
+PUI_AddContact,9,Verify Contact Name,xUI,xGetTitle,,,Free CRM,n
+PUI_AddRemoveElements,1,Navigate to Add/Remove Elements,xUI,xNavigate,hk_add_remove_elements_url,,,y
+PUI_AddRemoveElements,2,Click Add Element,xUI,xClick,hk_add_element_button,,,y
+PUI_AddRemoveElements,3,Verify Delete Button Appears,xUI,xWaitFor,hk_delete_button,,,y
+PUI_AddRemoveElements,4,Click Delete Button,xUI,xClick,hk_delete_button,,,y
+PUI_AddRemoveElements,5,Verify Page Title,xUI,xGetTitle,,,The Internet,n
+PUI_AddRemoveElements,6,Close Browser,xUI,xCloseBrowser,,,Browser closed,n
+PUI_Checkboxes,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_Checkboxes,2,Navigate to Checkboxes,xUI,xNavigate,hk_checkboxes_url,,,y
+PUI_Checkboxes,3,Check First Checkbox,xUI,xClick,hk_checkbox1,,,y
+PUI_Checkboxes,4,Uncheck Second Checkbox,xUI,xClick,hk_checkbox2,,,y
+PUI_Checkboxes,5,Verify First Checkbox Checked,xUI,xIsChecked,hk_checkbox1,,checked,y
+PUI_Checkboxes,6,Verify Second Checkbox Unchecked,xUI,xIsChecked,hk_checkbox2,,unchecked,y
+PUI_Checkboxes,7,Verify Page Title,xUI,xGetTitle,,,The Internet,n
+PUI_DragAndDrop,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_DragAndDrop,2,Navigate to Drag and Drop,xUI,xNavigate,hk_drag_and_drop_url,,,y
+PUI_DragAndDrop,3,Drag Column A to Column B,xUI,xDragAndDrop,hk_column_a;hk_column_b,,,y
+PUI_DragAndDrop,4,Verify Column A Text,xUI,xGetText,hk_column_a,,Column B,y
+PUI_DragAndDrop,5,Verify Column B Text,xUI,xGetText,hk_column_b,,Column A,y
+PUI_DragAndDrop,6,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_Dropdown,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_Dropdown,2,Navigate to Dropdown,xUI,xNavigate,hk_dropdown_url,,,y
+PUI_Dropdown,3,Select Option 1,xUI,xSelect,hk_dropdown_element;hk_option1,,,y
+PUI_Dropdown,4,Verify Option 1 Selected,xUI,xGetText,hk_option1,,Option 1,y
+PUI_Dropdown,5,Select Option 2,xUI,xSelect,hk_dropdown_element;hk_option2,,,y
+PUI_Dropdown,6,Verify Option 2 Selected,xUI,xGetText,hk_option2,,Option 2,y
+PUI_Dropdown,7,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_FileUpload,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_FileUpload,2,Navigate to File Upload,xUI,xNavigate,hk_file_upload_url,,,y
+PUI_FileUpload,3,Upload Test File,xUI,xUpload,hk_file_input;hk_test_file,,,y
+PUI_FileUpload,4,Click Upload Button,xUI,xClick,hk_upload_button,,,y
+PUI_FileUpload,5,Verify File Uploaded,xUI,xGetText,hk_uploaded_file,,test.txt,y
+PUI_FileUpload,6,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_JavaScriptAlerts,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_JavaScriptAlerts,2,Navigate to JS Alerts,xUI,xNavigate,hk_js_alerts_url,,,y
+PUI_JavaScriptAlerts,3,Click Alert Button,xUI,xClick,hk_alert_button,,,y
+PUI_JavaScriptAlerts,4,Accept Alert,xUI,xAcceptAlert,,,,y
+PUI_JavaScriptAlerts,5,Verify Alert Result,xUI,xGetText,hk_result_text,,You successfully clicked an alert,y
+PUI_JavaScriptAlerts,6,Click Confirm Button,xUI,xClick,hk_confirm_button,,,y
+PUI_JavaScriptAlerts,7,Accept Confirm,xUI,xAcceptAlert,,,,y
+PUI_JavaScriptAlerts,8,Verify Confirm Result,xUI,xGetText,hk_result_text,,You clicked: Ok,y
+PUI_JavaScriptAlerts,9,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_KeyPresses,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_KeyPresses,2,Navigate to Key Presses,xUI,xNavigate,hk_key_presses_url,,,y
+PUI_KeyPresses,3,Press Enter Key,xUI,xType,hk_key_input;ENTER,,,y
+PUI_KeyPresses,4,Verify Enter Key Result,xUI,xGetText,hk_key_result,,You entered: ENTER,y
+PUI_KeyPresses,5,Press Tab Key,xUI,xType,hk_key_input;TAB,,,y
+PUI_KeyPresses,6,Verify Tab Key Result,xUI,xGetText,hk_key_result,,You entered: TAB,y
+PUI_KeyPresses,7,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_Hovers,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_Hovers,2,Navigate to Hovers,xUI,xNavigate,hk_hovers_url,,,y
+PUI_Hovers,3,Hover Over User Avatar,xUI,xHover,hk_user_avatar,,,y
+PUI_Hovers,4,Verify User Info Appears,xUI,xWaitFor,hk_user_info,,,y
+PUI_Hovers,5,Verify User Info Text,xUI,xGetText,hk_user_info,,name: user1,y
+PUI_Hovers,6,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_ContextMenu,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_ContextMenu,2,Navigate to Context Menu,xUI,xNavigate,hk_context_menu_url,,,y
+PUI_ContextMenu,3,Right Click Context Box,xUI,xRightClick,hk_context_box,,,y
+PUI_ContextMenu,4,Accept Context Alert,xUI,xAcceptAlert,,,,y
+PUI_ContextMenu,5,Verify Context Menu Alert,xUI,xGetText,hk_result_text,,You selected a context menu,y
+PUI_ContextMenu,6,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_FormAuth,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_FormAuth,2,Navigate to Form Auth,xUI,xNavigate,hk_form_auth_url,,,y
+PUI_FormAuth,3,Type Username,xUI,xType,hk_username_input;hk_username,,,y
+PUI_FormAuth,4,Type Password,xUI,xType,hk_password_input;hk_password,,,y
+PUI_FormAuth,5,Click Login Button,xUI,xClick,hk_login_button,,,y
+PUI_FormAuth,6,Verify Login Success,xUI,xGetText,hk_success_message,,Congratulations! You must have the proper credentials.,y
+PUI_FormAuth,7,Click Logout,xUI,xClick,hk_logout_link,,,y
+PUI_FormAuth,8,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_DynamicControls,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_DynamicControls,2,Navigate to Dynamic Controls,xUI,xNavigate,hk_dynamic_controls_url,,,y
+PUI_DynamicControls,3,Click Remove/Add Checkbox Button,xUI,xClick,hk_remove_add_button,,,y
+PUI_DynamicControls,4,Wait for Checkbox to Disappear,xUI,xWaitFor,hk_dynamic_checkbox,,,y
+PUI_DynamicControls,5,Wait for Checkbox to Reappear,xUI,xWaitFor,hk_dynamic_checkbox,,,y
+PUI_DynamicControls,6,Click Enable/Disable Button,xUI,xClick,hk_enable_disable_button,,,y
+PUI_DynamicControls,7,Wait for Input to Enable,xUI,xWaitFor,hk_dynamic_input,,,y
+PUI_DynamicControls,8,Type in Enabled Input,xUI,xType,hk_dynamic_input;Test Input,,,y
+PUI_DynamicControls,9,Verify Input Text,xUI,xGetAttribute,hk_dynamic_input;value,,Test Input,y
+PUI_DynamicControls,10,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_ChallengingDOM,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_ChallengingDOM,2,Navigate to Challenging DOM,xUI,xNavigate,hk_challenging_dom_url,,,y
+PUI_ChallengingDOM,3,Click First Button,xUI,xClick,hk_challenging_button_1,,,y
+PUI_ChallengingDOM,4,Click Second Button,xUI,xClick,hk_challenging_button_2,,,y
+PUI_ChallengingDOM,5,Click Third Button,xUI,xClick,hk_challenging_button_3,,,y
+PUI_ChallengingDOM,6,Verify Page Title,xUI,xGetTitle,,,Challenging DOM,y
+PUI_ChallengingDOM,7,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_FloatingMenu,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_FloatingMenu,2,Navigate to Floating Menu,xUI,xNavigate,hk_floating_menu_url,,,y
+PUI_FloatingMenu,3,Scroll Down,xUI,xScroll,hk_floating_menu_link,,,y
+PUI_FloatingMenu,4,Verify Floating Menu Visible,xUI,xWaitFor,hk_floating_menu,,,y
+PUI_FloatingMenu,5,Click Home Link,xUI,xClick,hk_floating_home_link,,,y
+PUI_FloatingMenu,6,Verify Home Page Loaded,xUI,xGetTitle,,,Floating Menu,y
+PUI_FloatingMenu,7,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_Inputs,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_Inputs,2,Navigate to Inputs,xUI,xNavigate,hk_inputs_url,,,y
+PUI_Inputs,3,Type Number in Input,xUI,xType,hk_number_input;12345,,,y
+PUI_Inputs,4,Verify Number Entered,xUI,xGetAttribute,hk_number_input;value,,12345,y
+PUI_Inputs,5,Clear Input,xUI,xClear,hk_number_input,,,y
+PUI_Inputs,6,Type Text in Input,xUI,xType,hk_text_input;Test Input,,,y
+PUI_Inputs,7,Verify Text Entered,xUI,xGetAttribute,hk_text_input;value,,Test Input,y
+PUI_Inputs,8,Close Browser,xUI,xCloseBrowser,,,,n
+PUI_StatusCodes,1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PUI_StatusCodes,2,Navigate to Status Codes,xUI,xNavigate,hk_status_codes_url,,,y
+PUI_StatusCodes,3,Click 200 Status Code,xUI,xClick,hk_status_200_link,,,y
+PUI_StatusCodes,4,Verify 200 Status Page,xUI,xGetTitle,,,200,y
+PUI_StatusCodes,5,Navigate Back,xUI,xNavigateBack,,,,y
+PUI_StatusCodes,6,Click 404 Status Code,xUI,xClick,hk_status_404_link,,,y
+PUI_StatusCodes,7,Verify 404 Status Page,xUI,xGetTitle,,,404,y
+PUI_StatusCodes,8,Close Browser,xUI,xCloseBrowser,,,,n
+PMath_Addition,1,Verify_PMath_Addition,xMath,xAdd,v1;v2,vAdd,vAdd,n
+PMath_Multiplication,1,Verify_PMath_Multiplication,xMath,xMultiply,v1;v2,vMul,276,n
+PMath_Power,1,Verify_PMath_Power,xMath,xPower,v1;v2,vPow,vPow,n
+PMath_Division,1,Verify_PMath_Division,xMath,xDiv,v1;v2,vDiv,vDiv,n
+PMath_Area,1,Calculate area,xMath,xMultiply,12;12;3.14,vArea,452.16,n
+PAPI_PetGet,1,Get pet by ID,xAPI,xGet,base_url_ps;pet_endpoint,,,n
+PAPI_PetAdd,1,Add new pet,xAPI,xPost,base_url_ps;add_pet_endpoint;pet_payload,add_response,200,n
+PAPI_PetDelete,1,Delete pet by ID,xAPI,xDelete,base_url_ps;pet_endpoint,,,n
+PAPI_UserGet,1,Get user by ID,xAPI,xGet,base_url_rr;user_endpoint,user_response,200,n
+PAPI_UsersGet,1,Get all users,xAPI,xGet,base_url_rr;/users,users_response,200,n
+PAPI_UserCreate,1,Create new user,xAPI,xPost,base_url_rr;create_user_endpoint;user_payload,create_response,201,n
+PAI_TextPrompt,1,Send text prompt,xAI,xTextPrompt,api_endpoint;api_key;text_prompt,response,,n
+PAI_ContextPrompt,1,Send context prompt,xAI,xContextPrompt,api_endpoint;api_key;test_case_file;context_prompt,response,,n
+PAI_WeatherPrompt,1,Send text prompt,xAI,xTextPrompt,api_endpoint;api_key;weather_prompt,response,,n
+PAI_NewsPrompt,1,Send text prompt,xAI,xTextPrompt,api_endpoint;api_key;news_prompt,response,,n
+PAI_CricketPrompt,1,Send text prompt,xAI,xTextPrompt,api_endpoint;api_key;cric_prompt,response,,n

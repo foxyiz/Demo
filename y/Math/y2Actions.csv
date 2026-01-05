@@ -1,0 +1,22 @@
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Output,Expected,Critical
+Math_Addition,1,Verify_Math_Addition,xMath,xAdd,v1;v2,vAdd,vAdd,n
+Math_Multiplication,1,Verify_Math_Multiplication,xMath,xMultiply,v1;v2,vMul,276,n
+Math_Power,1,Verify_Math_Power,xMath,xPower,v1;2,vPow,vPow,n
+Math_Division,1,Verify_Math_Division,xMath,xDiv,v1;v2,vDiv,vDiv,n
+Math_Area,1,Square radius,xMath,xMultiply,v1;v1,vTemp,,n
+Math_Area,2,Multiple res with pi,xMath,xMultiply,vTemp;vPi,vArea,vArea,n
+Math_SquareArea,1,Multiply side with side,xMath,xMultiply,v1;v1,vSquareArea,vSquareArea,n
+Math_TriangleArea,1,Multiply base and height,xMath,xMultiply,vBase;vHeight,vTemp,,n
+Math_TriangleArea,2,Divide by 2,xMath,xDiv,vTemp;vTwo,vTriangleArea,vTriangleArea,n
+Math_Average,1,Calculate average,xMath,xDiv,vSum;vThree,vAverage,vAverage,n
+Math_SimpleInterest,1,Multiply principal rate and time,xMath,xMultiply,vPrincipal;vRate;vTime,vTemp,,n
+Math_SimpleInterest,2,Divide by 100,xMath,xDiv,vTemp;vHundred,vSimpleInterest,vSimpleInterest,n
+Math_CylinderVolume,1,Square radius,xMath,xMultiply,vRadius;vRadius,vTempRadius,,n
+Math_CylinderVolume,2,Multiply with pi,xMath,xMultiply,vTempRadius;vPi,vTempArea,,n
+Math_CylinderVolume,3,Multiply with height,xMath,xMultiply,vTempArea;vHeight,vVolume,vVolume,n
+Math_Modulo,1,Get remainder from division,xMath,xModulo,vDividend;vDivisor,vModulo,vModulo,n
+Math_Round,1,Round the number,xMath,xRound,number_to_round;decimal_places,vRounded,vRounded,n
+Math_CompoundInterest,1,Calculate rate as decimal,xMath,xDiv,vRate;vHundred,vRateDecimal,,n
+Math_CompoundInterest,2,Add 1 to rate,xMath,xAdd,vOne;vRateDecimal,vRateFactor,,n
+Math_CompoundInterest,3,Calculate compound factor,xMath,xPower,vRateFactor;vTime,vCompoundFactor,,n
+Math_CompoundInterest,4,Calculate final amount,xMath,xMultiply,vPrincipal;vCompoundFactor,vCompoundInterest,vCompoundInterest,n

@@ -1,0 +1,270 @@
+2025-05-23 15:59:47,769 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 15:59:47,773 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 16:03:09,658 - INFO - C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_Mix.json: Error: 'str' object has no attribute 'str'
+2025-05-23 16:03:09,659 - ERROR - Failed: C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_Mix.json
+2025-05-23 16:03:09,659 - INFO - C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_HK.json: Error: 'str' object has no attribute 'str'
+2025-05-23 16:03:09,659 - ERROR - Failed: C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_HK.json
+2025-05-23 20:52:47,134 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 20:52:47,136 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 20:56:20,348 - INFO - C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_Mix.json: Error: 'str' object has no attribute 'str'
+2025-05-23 20:56:20,376 - ERROR - Failed: C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_Mix.json
+2025-05-23 20:56:20,377 - INFO - C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_HK.json: Error: 'str' object has no attribute 'str'
+2025-05-23 20:56:20,377 - ERROR - Failed: C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\y\yPADs_HK.json
+2025-05-23 21:31:24,057 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 21:31:24,060 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 21:40:43,995 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 21:40:43,998 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 21:59:17,821 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 21:59:17,823 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 22:22:24,978 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 22:22:24,980 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 22:35:12,365 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 22:35:12,368 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 22:52:01,216 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 22:52:01,218 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 23:02:46,585 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\z\zLog.txt
+2025-05-23 23:02:46,587 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz2\fStart.json
+2025-05-23 23:16:11,364 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz3\z\zLog.txt
+2025-05-23 23:16:11,366 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz3\fStart.json
+2025-05-24 01:14:25,677 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\Foxyiz3\z\zLog.txt
+2025-05-24 02:05:33,371 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-24 09:33:06,610 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:11:16,453 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:13:27,848 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:16:39,030 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:16:39,035 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 14:16:39,065 - ERROR - Error in C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json: Error tokenizing data. C error: Expected 8 fields in line 9, saw 10
+
+2025-05-27 14:20:27,520 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:20:27,523 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 14:20:27,552 - ERROR - Error in C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json: Error tokenizing data. C error: Expected 8 fields in line 9, saw 10
+
+2025-05-27 14:24:54,893 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:24:54,897 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 14:24:54,938 - ERROR - Error in C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json: Error tokenizing data. C error: Expected 8 fields in line 9, saw 10
+
+2025-05-27 14:25:40,540 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:25:40,541 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 14:25:40,612 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_142540_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 14:25:40,633 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_142540_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 14:38:34,252 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:38:34,261 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 14:38:34,460 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_143834_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 14:38:34,482 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_143834_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 14:41:55,961 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 14:41:55,974 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 14:41:56,129 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_144155_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 14:41:56,148 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_144155_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 17:38:27,838 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 17:38:27,842 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 17:38:27,934 - ERROR - Error in C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json: Error tokenizing data. C error: Expected 8 fields in line 9, saw 10
+
+2025-05-27 17:39:39,626 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 17:39:39,628 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 17:40:03,303 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_173939_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 17:40:15,768 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_173939_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 19:41:44,318 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 19:41:44,326 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 19:42:03,439 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_194144_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 19:42:14,297 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_194144_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-27 20:43:53,656 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-27 20:43:53,662 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-27 20:44:26,351 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250527_204353_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-29 18:48:00,184 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-29 18:48:00,195 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-29 18:48:00,229 - ERROR - Error in C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json: Error tokenizing data. C error: Expected 3 fields in line 5, saw 10
+
+2025-05-29 18:50:05,685 - INFO - Initialized root-level logging to C:\Users\karth\PycharmProjects\FoXYiZ\z\zLog.txt
+2025-05-29 18:50:05,688 - INFO - Loading config from C:\Users\karth\PycharmProjects\FoXYiZ\y/yPADs_Agent.json
+2025-05-29 18:50:54,194 - INFO - Updated zDash.html at C:\Users\karth\PycharmProjects\FoXYiZ\z\20250529_185005_yPADs_Agent\yPADs_Agent_zDash.html
+2025-05-30 10:59:24,474 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-03 10:31:23,566 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-03 10:35:56,402 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-03 10:35:56,405 - INFO - Loading config from C:\Foxyiz\Code\y/yPADs_Mix.json
+2025-06-03 10:36:35,556 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,587 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,628 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,665 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,708 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,752 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,793 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:35,831 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:36,332 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:36,690 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:37,076 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:37,529 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:37,937 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:38,346 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:39,609 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103556_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-03 10:36:39,609 - INFO - Skipping plan AI_ContextPrompt
+2025-06-03 10:36:39,610 - INFO - Skipping plan AI_WeatherPrompt
+2025-06-03 10:36:39,610 - INFO - Skipping plan AI_NewsPrompt
+2025-06-03 10:36:39,611 - INFO - Skipping plan AI_CricketPrompt
+2025-06-03 10:39:09,631 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-03 10:39:09,632 - INFO - Loading config from C:\Foxyiz\Code\y/yPADs_HK.json
+2025-06-03 10:40:56,300 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250603_103909_yPADs_HK\yPADs_HK_zDash.html
+2025-06-04 09:04:00,436 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 09:04:00,443 - INFO - Loading config from C:\Foxyiz\Code\y/yPADs_Mix.json
+2025-06-04 09:04:31,667 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,676 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,684 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,695 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,705 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,716 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,728 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:31,755 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:32,265 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:32,680 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:33,087 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:33,328 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:33,430 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:33,863 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:36,964 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_090400_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-04 09:04:36,964 - INFO - Skipping plan AI_ContextPrompt
+2025-06-04 09:04:36,964 - INFO - Skipping plan AI_WeatherPrompt
+2025-06-04 09:04:36,965 - INFO - Skipping plan AI_NewsPrompt
+2025-06-04 09:04:36,965 - INFO - Skipping plan AI_CricketPrompt
+2025-06-04 09:43:28,029 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 09:43:28,040 - INFO - Loading config from C:\Foxyiz\Code\y/yPADs_Math.json
+2025-06-04 09:43:28,169 - WARNING - No actions found for PlanId: UI_AddContact
+2025-06-04 09:43:28,233 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,255 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,266 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,293 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,323 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,352 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,381 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094328_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:43:28,383 - WARNING - No actions found for PlanId: API_PetGet
+2025-06-04 09:43:28,387 - WARNING - No actions found for PlanId: API_PetAdd
+2025-06-04 09:43:28,388 - WARNING - No actions found for PlanId: API_PetDelete
+2025-06-04 09:43:28,389 - WARNING - No actions found for PlanId: API_UserGet
+2025-06-04 09:43:28,390 - WARNING - No actions found for PlanId: API_UsersGet
+2025-06-04 09:43:28,390 - WARNING - No actions found for PlanId: API_UserCreate
+2025-06-04 09:43:28,391 - WARNING - No actions found for PlanId: AI_TextPrompt
+2025-06-04 09:43:28,391 - INFO - Skipping plan AI_ContextPrompt
+2025-06-04 09:43:28,391 - INFO - Skipping plan AI_WeatherPrompt
+2025-06-04 09:43:28,391 - INFO - Skipping plan AI_NewsPrompt
+2025-06-04 09:43:28,392 - INFO - Skipping plan AI_CricketPrompt
+2025-06-04 09:48:03,235 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 09:48:03,239 - INFO - Loading config from C:\Foxyiz\Code\y/yPADs_Math.json
+2025-06-04 09:48:03,346 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:48:03,362 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:48:03,378 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:48:03,395 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:48:03,407 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:48:03,426 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:48:03,440 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_094803_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 09:59:28,317 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 10:21:50,727 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 10:21:50,730 - INFO - Loading config from C:\Foxyiz\Code\y/yPADs_Math.json
+2025-06-04 10:21:50,920 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:50,928 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:50,945 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:50,957 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:50,978 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:50,995 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,018 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,040 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,065 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,080 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,091 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,104 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,116 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,135 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,162 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,192 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,218 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,249 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 10:21:51,266 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250604_102150_yPADs_Math\yPADs_Math_zDash.html
+2025-06-04 20:34:53,443 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 20:40:30,067 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-04 20:41:19,428 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-06 10:29:23,152 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-20 00:31:10,354 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-20 00:33:44,617 - INFO - Initialized root-level logging to C:\Foxyiz\Code\z\zLog.txt
+2025-06-20 15:18:18,437 - ERROR - Error in main: name 'set_driver_paths' is not defined
+Traceback (most recent call last):
+  File "C:\Foxyiz\Code\fEngine.py", line 240, in main
+    set_driver_paths(drivers, timeout)
+    ^^^^^^^^^^^^^^^^
+NameError: name 'set_driver_paths' is not defined
+2025-06-20 15:20:48,597 - ERROR - Error in main: name 'set_driver_paths' is not defined
+Traceback (most recent call last):
+  File "C:\Foxyiz\Code\fEngine.py", line 240, in main
+    set_driver_paths(drivers, timeout)
+    ^^^^^^^^^^^^^^^^
+NameError: name 'set_driver_paths' is not defined
+2025-06-20 15:21:05,811 - ERROR - Error in main: name 'set_driver_paths' is not defined
+Traceback (most recent call last):
+  File "C:\Foxyiz\Code\fEngine.py", line 240, in main
+    set_driver_paths(drivers, timeout)
+    ^^^^^^^^^^^^^^^^
+NameError: name 'set_driver_paths' is not defined
+2025-06-20 15:31:18,024 - INFO - C:\Foxyiz\Code\y/yPADs_Math.json: Success
+2025-06-20 15:31:18,030 - INFO - C:\Foxyiz\Code\y/yPADs_HK.json: Success
+2025-06-20 15:31:18,031 - INFO - C:\Foxyiz\Code\y/yPADs_Mix.json: Success
+2025-06-20 15:33:29,604 - INFO - C:\Foxyiz\Code\y/yPADs_Math.json: Success
+2025-06-20 15:33:29,618 - INFO - C:\Foxyiz\Code\y/yPADs_HK.json: Success
+2025-06-20 15:33:29,622 - INFO - C:\Foxyiz\Code\y/yPADs_Mix.json: Success
+2025-06-20 15:34:17,898 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250620_153416_yPADs_Math\yPADs_Math_zDash.html
+2025-06-20 15:34:17,903 - INFO - C:\Foxyiz\Code\y/yPADs_Math.json: Success
+2025-06-20 15:37:14,153 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250620_153713_yPADs_Math\yPADs_Math_zDash.html
+2025-06-20 15:37:14,164 - INFO - C:\Foxyiz\Code\y/yPADs_Math.json: Success
+2025-06-20 15:41:27,275 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250620_154110_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-20 15:41:27,276 - INFO - C:\Foxyiz\Code\y/yPADs_Mix.json: Success
+2025-06-20 15:47:55,760 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250620_154740_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-20 15:47:55,767 - INFO - C:\Foxyiz\Code\y/yPADs_Mix.json: Success
+2025-06-20 16:02:36,466 - INFO - Updated zDash.html at C:\Foxyiz\Code\z\20250620_160135_yPADs_Mix\yPADs_Mix_zDash.html
+2025-06-20 16:02:36,472 - INFO - C:\Foxyiz\Code\y/yPADs_Mix.json: Success
+2025-06-20 16:15:55,772 - INFO - C:\Foxyiz\Code\y/yPADs_Mix.json: Success
+2025-06-20 16:15:55,862 - INFO - C:\Foxyiz\Code\y/yPADs_HK.json: Success
+2025-06-20 16:15:55,863 - INFO - C:\Foxyiz\Code\y/yPADs_Math.json: Success
+2025-06-20 16:15:55,864 - INFO - C:\Foxyiz\Code\y/yPADs_COG.json: Success
+2025-08-16 00:54:11,753 - INFO - Initialized root-level logging to C:\01_FoXYiZ\Framework\Framework\z\zLog.txt
+2025-08-16 00:55:56,708 - INFO - Initialized root-level logging to C:\01_FoXYiZ\Framework\Framework\z\zLog.txt
+2025-08-16 00:55:56,709 - INFO - Loading config from C:\01_FoXYiZ\Framework\Framework\y/FoXYiZ.json
+2025-08-16 00:55:56,711 - ERROR - Error in C:\01_FoXYiZ\Framework\Framework\y/FoXYiZ.json: Error tokenizing data. C error: Expected 5 fields in line 53, saw 11
+
+2025-08-16 00:57:08,800 - INFO - Initialized root-level logging to C:\01_FoXYiZ\Framework\Framework\z\zLog.txt
+2025-08-16 00:57:08,800 - INFO - Loading config from C:\01_FoXYiZ\Framework\Framework\y/FoXYiZ.json
+2025-08-16 00:57:08,818 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,825 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,832 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,842 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,853 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,863 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,872 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,881 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,890 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,906 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,922 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,939 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,955 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,970 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:08,985 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,002 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,019 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,031 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,042 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,053 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,064 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,076 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,089 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,101 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:57:09,113 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005708_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:58:57,137 - INFO - Initialized root-level logging to C:\01_FoXYiZ\Framework\Framework\z\zLog.txt
+2025-08-16 00:58:57,138 - INFO - Loading config from C:\01_FoXYiZ\Framework\Framework\y/FoXYiZ.json
+2025-08-16 00:58:57,155 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005857_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:58:57,162 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005857_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:58:57,168 - INFO - Updated zDash.html at C:\01_FoXYiZ\Framework\Framework\z\20250816_005857_FoXYiZ\FoXYiZ_zDash.html
+2025-08-16 00:58:57,168 - INFO - Skipping plan P2
+2025-08-16 00:58:57,168 - INFO - Skipping plan P3
+2025-08-16 00:58:57,168 - INFO - Skipping plan P4
+2025-08-16 00:58:57,168 - INFO - Skipping plan P5
+2025-08-16 00:58:57,169 - INFO - Skipping plan P6
+2025-08-16 00:58:57,169 - INFO - Skipping plan P7
+2025-08-16 00:58:57,169 - INFO - Skipping plan P8
+2025-08-16 00:58:57,170 - INFO - Skipping plan P9
+2025-08-16 00:58:57,170 - INFO - Skipping plan P10
+2025-08-16 00:58:57,170 - INFO - Skipping plan P11
+2025-08-16 00:58:57,171 - INFO - Skipping plan P12

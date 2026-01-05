@@ -1,0 +1,70 @@
+Module,Action,Doc,Input,Output
+UI,xOpenBrowser,Open a web browser using system PATH,browser_type,Browser opened
+UI,xNavigate,Navigate to a URL,url,Navigated to URL
+UI,xType,Type text into an element,text;locator,Text entered
+UI,xGetText,Get text from an element,locator,Text content
+UI,xClick,Click an element,locator,Clicked element
+UI,xSelectDropdown,Select an option from a dropdown,locator;value,Selected value
+UI,xWaitFor,Wait for an element to be present,locator,Element is present
+UI,xCloseBrowser,Close the browser,,Browser closed
+UI,xIsChecked,Check if a checkbox is checked,locator,checked/unchecked
+UI,xDragAndDrop,Drag and drop an element,source_locator;target_locator,Drag and drop performed
+UI,xUploadFile,Upload a file,locator;file_path,File uploaded
+UI,xGetCurrentUrl,Get the current URL,,URL string
+UI,xGetTitle,Get the page title,,Title string
+UI,xHandleAlert,Handle a JavaScript alert,action (accept/dismiss/type:text),Alert action result
+UI,xHover,Hover over an element,locator,Hovered over element
+UI,xSendKeys,Send special keys,locator;key_name,Sent key status
+UI,xContextClick,Perform a right-click,locator,Context click performed
+UI,xSetViewport,Set browser viewport size,width;height,Viewport set
+UI,xRefresh,Refresh the current page,,Page refreshed
+UI,xStartTimer,Start a timer for performance measurement,,Timer started
+UI,xStopTimer,Stop timer and return elapsed time,output_var,Elapsed time in ms
+UI,xAssertLessThan,Assert that a value is less than expected,actual;expected,Assertion passed/failed
+UI,xAcceptAlert,Accept a JavaScript alert,,Alert accepted
+UI,xDismissAlert,Dismiss a JavaScript alert,,Alert dismissed
+Math,xAdd,Add numbers,v1;v2;...,Sum
+Math,xMinus,Subtract two numbers,v1;v2,Difference
+Math,xMultiply,Multiply numbers,v1;v2;...,Product
+Math,xDiv,Divide two numbers,v1;v2,Quotient
+Math,xCompare,Compare two values,v1;v2,Pass/Fail
+Math,xPower,Raise number to power,v1;v2,Result
+Math,xModulo,Modulo operation,v1;v2,Remainder
+Math,xRound,Round a number,number;places,Rounded value
+API,xGet,Send a GET request,base_url;endpoint;[api_key],Status code
+API,xPost,Send a POST request,base_url;endpoint;payload_path;[api_key],Status code
+API,xPut,Send a PUT request,base_url;endpoint;payload_path;[api_key],Status code
+API,xDelete,Send a DELETE request,base_url;endpoint;[api_key],Status code
+API,xGetAuthToken,Retrieve an authentication token,auth_url;payload_path,Token retrieved/failed
+JSON,xExtractJson,Extract a value from the last API response JSON,key_path,Value
+JSON,xCompareJson,Compare a JSON value with an expected value,key_path;expected_value,Pass/Fail
+JSON,xValidateJson,Validate if a key exists in the JSON response,key_path,True/False
+AI,xTextPrompt,Send a text prompt to an AI service,api_endpoint;api_key;prompt,AI response
+AI,xContextPrompt,Send a context-aware prompt to an AI service,api_endpoint;api_key;context_file;prompt,AI response
+SAP,xOpenSAPGUI,Open SAP GUI,connection_name,SAP GUI session opened
+SAP,xLogin,Log into SAP,user;password;client,Login Successful
+SAP,xVerifyScreen,Verify screen text,expected_text,True/False
+SAP,xExecuteTransaction,Execute SAP transaction,tcode,Transaction executed
+SAP,xEnterParameters,Enter parameters in SAP,params_json,Parameters entered
+SAP,xDownloadData,Trigger SAP data download,,Download initiated
+SAP,xLogout,Log out of SAP,,Logout Successful
+File,xFileCopy,Copy files or directories,source_path;destination_path;[overwrite],Copy status
+File,xFileDelete,Delete files or directories,file_path;[confirm],Delete status
+File,xFileExists,Check if file or directory exists,file_path,exists/not_found
+Email,xEmailSend,Send email with attachments using SMTP,smtp_server;port;username;password;to_email;subject;body;[attachment_path],Email sent status
+Email,xEmailRead,Read emails from inbox with filtering,imap_server;port;username;password;[subject_filter];[max_count],Email count
+DB,xDBConnect,Connect to database (SQLite),db_type;connection_string,Connection status
+DB,xDBQuery,Execute SQL query and return results,query_string;[max_rows],Query results
+DB,xDBInsert,Insert data into database table,table_name;column_values,Insert status
+Logic,xLogicIf,Execute conditional logic with if-then-else,condition;true_action;false_action,Condition result
+Logic,xLogicSwitch,Multi-case switch logic,variable;case1:action1;case2:action2;default_action,Case match result
+Cloud,xCloudUpload,Upload files to cloud storage,cloud_provider;credentials_file;bucket;local_file;remote_name;[public],Upload URL
+Cloud,xCloudDownload,Download files from cloud storage,cloud_provider;credentials_file;bucket;remote_name;local_dest,Download status
+Cloud,xCloudListFiles,List files in cloud storage bucket,cloud_provider;credentials_file;bucket;[prefix],JSON file list
+Cloud,xCloudDeleteFile,Delete file from cloud storage,cloud_provider;credentials_file;bucket;remote_name,Delete status
+IoT,xIoTControl,Control IoT devices via REST API or MQTT,device_type;device_id;action;parameters,Control status
+IoT,xIoTSensor,Read sensor data from IoT devices,device_type;device_id;sensor_type,Sensor value
+Time,xTimeWait,Wait for specified duration or condition,duration_seconds;[condition_action],Wait status
+Time,xTimeSchedule,Schedule action execution at specific time,schedule_time;action_type;action_name;action_input,Schedule status
+Phone,xMakeCall,Make a phone call via tel: link,phone_number,Call initiated
+Phone,xSendSMS,Send SMS message via sms: link,phone_number;[message],SMS initiated

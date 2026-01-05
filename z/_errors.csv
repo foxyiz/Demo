@@ -1,0 +1,10 @@
+Time,PlanId,DesignId,StepId,ActionType,ActionName,StepInfo,Output
+2025-09-24 18:41:40,PMath_Addition,D1,1,xMath,xAdd,,35.0
+2025-09-24 18:41:40,PMath_Area,D1,2,xMath,xMultiply,,Error in xMultiply: Non-numeric input: ['vTemp'; '3.14'] [Link to PMath_Area_D1_2.txt]
+2025-09-24 18:41:40,PMath_TriangleArea,D1,2,xMath,xDiv,,Error in xDiv: Non-numeric input: ['vTemp'; '2.0'] [Link to PMath_TriangleArea_D1_2.txt]
+2025-09-24 18:41:40,PMath_SimpleInterest,D1,2,xMath,xDiv,,Error in xDiv: Non-numeric input: ['vTemp'; '100.0'] [Link to PMath_SimpleInterest_D1_2.txt]
+2025-09-24 18:41:40,PMath_Average,D1,2,xMath,xDiv,,13.333333333333334
+2025-09-24 18:41:40,PMath_CylinderVolume,D1,2,xMath,xMultiply,,Error in xMultiply: Non-numeric input: ['vTempRadius'; '3.14'] [Link to PMath_CylinderVolume_D1_2.txt]
+2025-09-24 18:41:40,PMath_Modulo,D1,1,xMath,xModulo,,Error in xModulo: Non-numeric input: ['vDividend'; 'vDivisor'] [Link to PMath_Modulo_D1_1.txt]
+2025-09-24 18:41:40,PMath_Round,D1,1,xMath,xRound,,3.14
+2025-09-24 18:41:40,PMath_CompoundInterest,D1,2,xMath,xAdd,,Error in xAdd: Non-numeric input: ['vOne'; 'vRateDecimal'] [Link to PMath_CompoundInterest_D1_2.txt]

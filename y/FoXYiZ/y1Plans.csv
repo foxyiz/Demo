@@ -1,0 +1,10 @@
+PlanId,PlanName,DesignId,Run,Tags,Output
+PFoxyiz_OpenBrowser,Open Browser and Navigate to Foxyiz.com,D1,Y,"UI,Foxyiz",browser_opened
+PFoxyiz_Nav_Home,Navigate to Home,D1,Y,"UI,Foxyiz,Navigation",nav_home
+PFoxyiz_Nav_What,Navigate to What?,D1,Y,"UI,Foxyiz,Navigation",nav_what
+PFoxyiz_Nav_LCNC,Navigate to LC/NC,D1,Y,"UI,Foxyiz,Navigation",nav_lcnc
+PFoxyiz_Nav_YPADS,Navigate to YPADS,D1,Y,"UI,Foxyiz,Navigation",nav_ypads
+PFoxyiz_Nav_Features,Navigate to Features,D1,Y,"UI,Foxyiz,Navigation",nav_features
+PFoxyiz_Nav_Industry,Navigate to Industry,D1,Y,"UI,Foxyiz,Navigation",nav_industry
+PFoxyiz_Nav_Demo,Navigate to Demo,D1,Y,"UI,Foxyiz,Navigation",nav_demo
+PFoxyiz_ContactUs,Fill Contact Us Form,D1,Y,"UI,Foxyiz,Contact",contact_form_submitted

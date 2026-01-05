@@ -1,0 +1,16 @@
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Expected,Output,Critical
+PFoxyiz_OpenBrowser,S1,Open Browser,xUI,xOpenBrowser,chrome,,,y
+PFoxyiz_OpenBrowser,S2,Navigate to Foxyiz.com,xUI,xNavigate,base_url,,,y
+PFoxyiz_Nav_Home,S1,Click Home Navigation,xUI,xClick,nav_home_locator,,,y
+PFoxyiz_Nav_What,S1,Click What? Navigation,xUI,xClick,nav_what_locator,,,y
+PFoxyiz_Nav_LCNC,S1,Click LC/NC Navigation,xUI,xClick,nav_lcnc_locator,,,y
+PFoxyiz_Nav_YPADS,S1,Click YPADS Navigation,xUI,xClick,nav_ypads_locator,,,y
+PFoxyiz_Nav_Features,S1,Click Features Navigation,xUI,xClick,nav_features_locator,,,y
+PFoxyiz_Nav_Industry,S1,Click Industry Navigation,xUI,xClick,nav_industry_locator,,,y
+PFoxyiz_Nav_Demo,S1,Click Demo Navigation,xUI,xClick,nav_demo_locator,,,y
+PFoxyiz_ContactUs,S1,Click Contact Us Button,xUI,xClick,contact_us_button_locator,,,y
+PFoxyiz_ContactUs,S2,Wait for Get in Touch Modal,xUI,xWaitFor,contact_modal_locator,,,y
+PFoxyiz_ContactUs,S3,Enter Name,xUI,xType,contact_name;contact_name_locator,,,y
+PFoxyiz_ContactUs,S4,Enter Email,xUI,xType,contact_email;contact_email_locator,,,y
+PFoxyiz_ContactUs,S5,Enter Query,xUI,xType,contact_query;contact_query_locator,,,y
+PFoxyiz_ContactUs,S6,Click Send Message Button,xUI,xClick,send_message_button_locator,,,y

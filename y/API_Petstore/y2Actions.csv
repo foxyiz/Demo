@@ -1,0 +1,95 @@
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Expected,Output,Critical
+PPet_Add,1,Add new pet to store,xAPI,xPost,petstore_base_url;add_pet_endpoint;add_pet_payload,200,pet_added_response,y
+PPet_Add,2,Validate pet creation response,xJSON,xValidateJson,id,,,n
+PPet_Add,3,Extract pet ID,xJSON,xExtractJson,id,,,n
+PPet_Add,4,Validate pet name,xJSON,xValidateJson,name,,,n
+PPet_Add,5,Validate pet status,xJSON,xValidateJson,status,,,n
+PPet_GetById,1,Create pet first,xAPI,xPost,petstore_base_url;add_pet_endpoint;add_pet_payload,200,pet_created_for_get,y
+PPet_GetById,2,Extract created pet ID,xJSON,xExtractJson,id,,,n
+PPet_GetById,3,Get pet by ID,xAPI,xGet,petstore_base_url;get_pet_by_id_endpoint,200,pet_response,y
+PPet_GetById,4,Validate pet response structure,xJSON,xValidateJson,id,,,n
+PPet_GetById,5,Extract pet name,xJSON,xExtractJson,name,,,n
+PPet_GetById,6,Extract pet status,xJSON,xExtractJson,status,,,n
+PPet_GetById,7,Validate pet category,xJSON,xValidateJson,category,,,n
+PPet_GetByStatus,1,Get pets by status available,xAPI,xGet,petstore_base_url;get_pets_by_status_available_endpoint,200,pets_available_response,y
+PPet_GetByStatus,2,Validate pets array response,xJSON,xValidateJson,0.id,,,n
+PPet_GetByStatus,3,Get pets by status pending,xAPI,xGet,petstore_base_url;get_pets_by_status_pending_endpoint,200,pets_pending_response,y
+PPet_GetByStatus,4,Get pets by status sold,xAPI,xGet,petstore_base_url;get_pets_by_status_sold_endpoint,200,pets_sold_response,y
+PPet_Update,1,Create pet first,xAPI,xPost,petstore_base_url;add_pet_endpoint;add_pet_payload,200,pet_created_for_update,y
+PPet_Update,2,Update existing pet,xAPI,xPut,petstore_base_url;update_pet_endpoint;update_pet_payload,200,pet_updated_response,y
+PPet_Update,3,Validate updated pet response,xJSON,xValidateJson,id,,,n
+PPet_Update,4,Verify pet name updated,xJSON,xCompareJson,name;updated_pet_name,,,n
+PPet_UpdateForm,1,Create pet first,xAPI,xPost,petstore_base_url;add_pet_endpoint;add_pet_payload,200,pet_created_for_form_update,y
+PPet_UpdateForm,2,Extract pet ID for form update,xJSON,xExtractJson,id,,,n
+PPet_UpdateForm,3,Update pet with form data,xAPI,xPost,petstore_base_url;update_pet_form_endpoint;update_pet_form_data,200,pet_form_updated_response,n
+PPet_UpdateForm,4,Validate form update response,xJSON,xValidateJson,code,,,n
+PPet_Delete,1,Create pet first,xAPI,xPost,petstore_base_url;add_pet_endpoint;add_pet_payload,200,pet_created_for_delete,y
+PPet_Delete,2,Extract created pet ID,xJSON,xExtractJson,id,,,n
+PPet_Delete,3,Delete pet by ID,xAPI,xDelete,petstore_base_url;delete_pet_endpoint,200,pet_deleted_response,y
+PPet_Delete,4,Verify pet deleted,xAPI,xGet,petstore_base_url;get_pet_by_id_endpoint,404,pet_not_found_after_delete,n
+PPet_NotFound,1,Get non-existent pet,xAPI,xGet,petstore_base_url;get_pet_not_found_endpoint,404,pet_not_found_response,y
+PPet_NotFound,2,Validate error response,xJSON,xValidateJson,code,,,n
+PPet_NotFound,3,Validate error message,xJSON,xValidateJson,message,,,n
+PPet_InvalidData,1,Add pet with invalid data,xAPI,xPost,petstore_base_url;add_pet_endpoint;invalid_pet_payload,200,invalid_data_response,n
+PPet_InvalidData,2,Validate error response,xJSON,xValidateJson,code,,,n
+PStore_Inventory,1,Get store inventory,xAPI,xGet,petstore_base_url;inventory_endpoint,200,inventory_response,y
+PStore_Inventory,2,Validate inventory response,xJSON,xValidateJson,available,,,n
+PStore_Inventory,3,Extract available count,xJSON,xExtractJson,available,,,n
+PStore_Inventory,4,Extract pending count,xJSON,xExtractJson,pending,,,n
+PStore_Inventory,5,Extract sold count,xJSON,xExtractJson,sold,,,n
+PStore_AddOrder,1,Create store order,xAPI,xPost,petstore_base_url;add_order_endpoint;add_order_payload,200,order_created_response,y
+PStore_AddOrder,2,Validate order creation,xJSON,xValidateJson,id,,,n
+PStore_AddOrder,3,Extract order ID,xJSON,xExtractJson,id,,,n
+PStore_AddOrder,4,Validate order status,xJSON,xValidateJson,status,,,n
+PStore_AddOrder,5,Validate order complete flag,xJSON,xValidateJson,complete,,,n
+PStore_GetOrder,1,Create order first,xAPI,xPost,petstore_base_url;add_order_endpoint;add_order_payload,200,order_created_for_get,y
+PStore_GetOrder,2,Extract created order ID,xJSON,xExtractJson,id,,,n
+PStore_GetOrder,3,Get order by ID,xAPI,xGet,petstore_base_url;get_order_by_id_endpoint,200,order_response,y
+PStore_GetOrder,4,Validate order response,xJSON,xValidateJson,id,,,n
+PStore_GetOrder,5,Extract order pet ID,xJSON,xExtractJson,petId,,,n
+PStore_GetOrder,6,Extract order quantity,xJSON,xExtractJson,quantity,,,n
+PStore_DeleteOrder,1,Create order first,xAPI,xPost,petstore_base_url;add_order_endpoint;add_order_payload,200,order_created_for_delete,y
+PStore_DeleteOrder,2,Extract created order ID,xJSON,xExtractJson,id,,,n
+PStore_DeleteOrder,3,Delete order by ID,xAPI,xDelete,petstore_base_url;delete_order_endpoint,200,order_deleted_response,y
+PStore_DeleteOrder,4,Verify order deleted,xAPI,xGet,petstore_base_url;get_order_by_id_endpoint,404,order_not_found_after_delete,n
+PStore_OrderNotFound,1,Get non-existent order,xAPI,xGet,petstore_base_url;get_order_not_found_endpoint,404,order_not_found_response,y
+PStore_OrderNotFound,2,Validate error response,xJSON,xValidateJson,code,,,n
+PUser_Create,1,Create new user,xAPI,xPost,petstore_base_url;create_user_endpoint;create_user_payload,200,user_created_response,y
+PUser_Create,2,Validate user creation,xJSON,xValidateJson,code,,,n
+PUser_Create,3,Extract user creation message,xJSON,xExtractJson,message,,,n
+PUser_GetByUsername,1,Create user first,xAPI,xPost,petstore_base_url;create_user_endpoint;create_user_payload,200,user_created_for_get,y
+PUser_GetByUsername,2,Get user by username,xAPI,xGet,petstore_base_url;get_user_by_username_endpoint,200,user_response,y
+PUser_GetByUsername,3,Validate user response,xJSON,xValidateJson,id,,,n
+PUser_GetByUsername,4,Extract user email,xJSON,xExtractJson,email,,,n
+PUser_GetByUsername,5,Extract user status,xJSON,xExtractJson,userStatus,,,n
+PUser_Update,1,Create user first,xAPI,xPost,petstore_base_url;create_user_endpoint;create_user_payload,200,user_created_for_update,y
+PUser_Update,2,Update existing user,xAPI,xPut,petstore_base_url;update_user_endpoint;update_user_payload,200,user_updated_response,y
+PUser_Update,3,Validate user update,xJSON,xValidateJson,code,,,n
+PUser_Delete,1,Create user first,xAPI,xPost,petstore_base_url;create_user_endpoint;create_user_payload,200,user_created_for_delete,y
+PUser_Delete,2,Delete user by username,xAPI,xDelete,petstore_base_url;delete_user_endpoint,200,user_deleted_response,y
+PUser_Delete,3,Verify user deleted,xAPI,xGet,petstore_base_url;get_user_by_username_endpoint,404,user_not_found_after_delete,n
+PUser_Login,1,User login,xAPI,xGet,petstore_base_url;user_login_endpoint,200,user_login_response,y
+PUser_Login,2,Validate login response,xJSON,xValidateJson,code,,,n
+PUser_Login,3,Extract login message,xJSON,xExtractJson,message,,,n
+PUser_Logout,1,User logout,xAPI,xGet,petstore_base_url;user_logout_endpoint,200,user_logout_response,y
+PUser_Logout,2,Validate logout response,xJSON,xValidateJson,code,,,n
+PUser_CreateWithArray,1,Create users with array,xAPI,xPost,petstore_base_url;create_users_array_endpoint;create_users_array_payload,200,users_array_created_response,n
+PUser_CreateWithArray,2,Validate array creation,xJSON,xValidateJson,code,,,n
+PUser_CreateWithList,1,Create users with list,xAPI,xPost,petstore_base_url;create_users_list_endpoint;create_users_list_payload,200,users_list_created_response,n
+PUser_CreateWithList,2,Validate list creation,xJSON,xValidateJson,code,,,n
+PUser_NotFound,1,Get non-existent user,xAPI,xGet,petstore_base_url;get_user_not_found_endpoint,404,user_not_found_response,y
+PUser_NotFound,2,Validate error response,xJSON,xValidateJson,code,,,n
+PAPI_ResponseValidation,1,Get pet by status for validation,xAPI,xGet,petstore_base_url;get_pets_by_status_available_endpoint,200,pet_validation_response,y
+PAPI_ResponseValidation,2,Validate pet response structure,xJSON,xValidateJson,0.id,,,n
+PAPI_ResponseValidation,3,Validate pet response name field,xJSON,xValidateJson,0.name,,,n
+PAPI_ResponseValidation,4,Validate pet response status field,xJSON,xValidateJson,0.status,,,n
+PAPI_ResponseValidation,5,Create order for validation,xAPI,xPost,petstore_base_url;add_order_endpoint;add_order_payload,200,order_created_for_validation,y
+PAPI_ResponseValidation,6,Get order for validation,xAPI,xGet,petstore_base_url;get_order_by_id_endpoint,200,order_validation_response,y
+PAPI_ResponseValidation,7,Validate order response structure,xJSON,xValidateJson,id,,,n
+PAPI_ResponseValidation,8,Create user for validation,xAPI,xPost,petstore_base_url;create_user_endpoint;create_user_payload,200,user_created_for_validation,y
+PAPI_ResponseValidation,9,Get user for validation,xAPI,xGet,petstore_base_url;get_user_by_username_endpoint,200,user_validation_response,y
+PAPI_ResponseValidation,10,Validate user response structure,xJSON,xValidateJson,id,,,n
+PAPI_ErrorHandling,1,Test 404 error handling,xAPI,xGet,petstore_base_url;error_404_endpoint,404,error_404_response,y
+PAPI_ErrorHandling,2,Validate 404 error structure,xJSON,xValidateJson,code,,,n
+PAPI_ErrorHandling,3,Test 400 error handling,xAPI,xPost,petstore_base_url;add_pet_endpoint;error_400_payload,200,error_400_response,n
+PAPI_ErrorHandling,4,Validate 400 error structure,xJSON,xValidateJson,code,,,n

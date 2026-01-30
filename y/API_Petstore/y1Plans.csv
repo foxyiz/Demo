@@ -1,0 +1,25 @@
+PlanId,PlanName,DesignId,Run,Tags,Output
+PPet_Add,Add New Pet,D1;D2;D3,Y,Pet,pet_added
+PPet_GetById,Get Pet by ID (after creation),D1;D2;D3,Y,Pet,pet_retrieved
+PPet_GetByStatus,Get Pets by Status,D1;D2;D3,Y,Pet,pets_by_status_retrieved
+PPet_Update,Update Pet,D1;D2;D3,Y,Pet,pet_updated
+PPet_UpdateForm,Update Pet with Form Data,D1;D2;D3,Y,Pet,pet_updated_form
+PPet_Delete,Delete Pet,D1;D2;D3,Y,Pet,pet_deleted
+PPet_NotFound,Get Non-Existent Pet,D1;D2;D3,Y,Pet,pet_not_found_verified
+PPet_InvalidData,Add Pet with Invalid Data,D1;D2;D3,Y,Pet,invalid_data_rejected
+PStore_Inventory,Get Store Inventory,D1,Y,Store,inventory_retrieved
+PStore_AddOrder,Create Store Order,D1;D2;D3,Y,Store,order_created
+PStore_GetOrder,Get Order by ID,D1;D2;D3,Y,Store,order_retrieved
+PStore_DeleteOrder,Delete Order,D1;D2;D3,Y,Store,order_deleted
+PStore_OrderNotFound,Get Non-Existent Order,D1;D2;D3,Y,Store,order_not_found_verified
+PUser_Create,Create User,D1;D2;D3,Y,User,user_created
+PUser_GetByUsername,Get User by Username,D1;D2;D3,Y,User,user_retrieved
+PUser_Update,Update User,D1;D2;D3,Y,User,user_updated
+PUser_Delete,Delete User,D1;D2;D3,Y,User,user_deleted
+PUser_Login,User Login,D1;D2;D3,Y,User,user_logged_in
+PUser_Logout,User Logout,D1,Y,User,user_logged_out
+PUser_CreateWithArray,Create Users with Array,D1,Y,User,users_created_array
+PUser_CreateWithList,Create Users with List,D1,Y,User,users_created_list
+PUser_NotFound,Get Non-Existent User,D1;D2;D3,Y,User,user_not_found_verified
+PAPI_ResponseValidation,Validate API Response Structure,D1;D2;D3,Y,Validation,response_validated
+PAPI_ErrorHandling,Test API Error Handling,D1;D2;D3,Y,Validation,errors_handled

@@ -1,0 +1,18 @@
+{
+  "id": 456,
+  "name": "kitty_updated",
+  "category": {
+    "id": 2,
+    "name": "Cats"
+  },
+  "photoUrls": [
+    "https://example.com/cat_updated.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "playful_updated"
+    }
+  ],
+  "status": "available"
+}

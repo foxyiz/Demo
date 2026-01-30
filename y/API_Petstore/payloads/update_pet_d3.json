@@ -1,0 +1,18 @@
+{
+  "id": 789,
+  "name": "birdie_updated",
+  "category": {
+    "id": 3,
+    "name": "Birds"
+  },
+  "photoUrls": [
+    "https://example.com/bird_updated.jpg"
+  ],
+  "tags": [
+    {
+      "id": 2,
+      "name": "colorful_updated"
+    }
+  ],
+  "status": "pending"
+}

@@ -1,6 +1,0 @@
-PlanId,PlanName,DesignId,Run,Tags,Output
-Weather_Current,Test_Current_Weather_by_City,D1;D2;D3,Y,Weather,current_weather_success
-Weather_Forecast,Test_Weather_Forecast_by_City,D1;D2;D3,Y,Weather,forecast_success
-Weather_ByCoordinates,Test_Weather_by_Coordinates,D1;D2;D3,Y,Weather,coordinates_weather_success
-Weather_ValidateResponse,Test_Weather_Response_Validation,D1;D2;D3,Y,Weather,validation_success
-

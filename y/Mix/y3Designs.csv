@@ -51,8 +51,8 @@ UI,hk_context_menu_link,"css==a[href=""/context_menu""]","css==a[href=""/context
 UI,hk_context_box,css==#hot-spot,css==#hot-spot,css==#hot-spot
 UI,hk_expected_context_alert,You selected a context menu,You selected a context menu,You selected a context menu
 UI,cog_url,https://ui.cogmento.com/?lang=en,https://ui.cogmento.com/?lang=en,https://ui.cogmento.com/?lang=en
-UI,email,kkarthikqe@gmail.com,,
-UI,password,Test123$,,
+UI,email,user@example.com,,
+UI,password,YOUR_PASSWORD_HERE,,
 UI,email_xpath,xpath==//input[@name='email'],,
 UI,password_xpath,xpath==//input[@name='password'],,
 UI,login_button_xpath,xpath==//div[text()='Login'],,
@@ -108,7 +108,7 @@ API,query_params,page=1,page=2,page=3
 API,auth_token,Bearer valid_token,Bearer valid_token,Bearer valid_token
 AI,api_endpoint,https://api.x.ai/v1,,
 AI,api_key,REPLACE_WITH_XAI_API_KEY_OR_USE_ENV,,
-AI,test_case_file,C:\Users\karth\PycharmProjects\FOXYIZ-May25\Core10\test_case.txt,,
+AI,test_case_file,/path/to/test_case.txt,,
 AI,text_prompt,How many pounds is 77kgs,,
 AI,weather_prompt,How is the temperature in Los Angeles,,
 AI,news_prompt,Headings from CNN,,
@@ -119,7 +119,7 @@ UI,hk_form_auth_link,"css==a[href='/login']","css==a[href='/login']","css==a[hre
 UI,hk_username_input,css==#username,css==#username,css==#username
 UI,hk_password_input,css==#password,css==#password,css==#password
 UI,hk_username,tomsmith,tomsmith,tomsmith
-UI,hk_password,SuperSecretPassword!,SuperSecretPassword!,SuperSecretPassword!
+UI,hk_password,YOUR_TEST_PASSWORD_HERE,YOUR_TEST_PASSWORD_HERE,YOUR_TEST_PASSWORD_HERE
 UI,hk_login_button,"css==button[type='submit']","css==button[type='submit']","css==button[type='submit']"
 UI,hk_success_message,css==#flash,css==#flash,css==#flash
 UI,hk_logout_link,"css==a[href='/logout']","css==a[href='/logout']","css==a[href='/logout']"

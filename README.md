@@ -4,8 +4,9 @@
 
 ## What is FoXYiZ?
 
-FoXYiZ is a **low-code/no-code automation framework** that follows a simple formula: **f(x, y) = z**
+FoXYiZ is a **low-code/no-code automation framework(LCNC)** that follows a simple formula: **f(x, y) = z**
 
+- **f** = The Engine that binds configs, Plans, Actions and Designs to power your Automation.
 - **x** = Built-in automation capabilities (UI, API, Math, AI, and more)
 - **y** = Your automation plans, actions, and data (defined in simple files)
 - **z** = Results, dashboards, and insights
@@ -98,50 +99,83 @@ FoXYiZ supports a wide range of automation capabilities:
 ☁️ **Cloud Storage** - Upload/download files from cloud services  
 📱 **IoT Devices** - Interact with IoT devices and sensors  
 
-## Understanding Your Files
+## Understanding Your Files (YPAD)
+
+Each YPAD (your automation data) uses three file types. The **exact column names** must match those below.
 
 ### Plans File (y1Plans)
 
-Defines **what** you want to automate. Each row is a plan that describes:
-- Plan name and ID
-- Which data sets to use
-- Whether to run it or not
+Defines **what** you want to automate. Each row is a plan.
 
-**Example:**
+**Columns (exact):** `PlanId`, `PlanName`, `DesignId`, `Run`, `Tags`, `Output`
+
+| Column    | Description |
+|-----------|-------------|
+| PlanId    | Unique plan identifier (e.g. PLoginTest, PMath_Addition). |
+| PlanName  | Human-readable name. |
+| DesignId  | One or more design IDs separated by `;` (e.g. D1 or D1;D2). Variables from y3Designs are chosen by this. |
+| Run       | Y = run this plan, N = skip. |
+| Tags      | Optional; used with `tags` in fStart.json to filter which plans run. |
+| Output    | Optional description. |
+
+**Example (y1Plans.csv):**
 ```
-PlanId,PlanName,DesignId,Run
-LoginTest,Verify_Login_Process,D1,Y
-SearchTest,Verify_Search_Functionality,D1;D2,Y
+PlanId,PlanName,DesignId,Run,Tags,Output
+PLoginTest,Verify_Login_Process,D1,Y,UI,login_success
+PMath_Addition,Verify_Math_Addition,D1;D2,Y,Math,addition_result
+PAPI_PetGet,Verify_API_PetGet,D1,Y,petstore,pet_status
 ```
 
 ### Actions File (y2Actions)
 
-Defines **how** to perform each step. Specifies:
-- Action type (web, API, math, etc.)
-- What action to perform
-- Input data
-- Expected results
+Defines **how** to perform each step. One row per step.
 
-**Example:**
+**Columns (exact):** `PlanId`, `StepId`, `StepInfo`, `ActionType`, `ActionName`, `Input`, `Output`, `Expected`, `Critical`
+
+| Column     | Description |
+|------------|-------------|
+| PlanId     | Must match a PlanId in y1Plans. |
+| StepId     | Step number (e.g. 1, 2, 3). |
+| StepInfo   | Short description of the step. |
+| ActionType | e.g. xUI, xMath, xAPI, xReuse, xCustom. |
+| ActionName | e.g. xOpenBrowser, xAdd, xGet, or a PlanId for xReuse. |
+| Input      | Semicolon-separated parameters; can use variable names from y3Designs (e.g. url;locator). |
+| Output     | Optional output variable name. |
+| Expected   | Optional expected value for pass/fail. |
+| Critical   | Y = stop plan if this step fails; N = continue. |
+
+**Example (y2Actions.csv):**
 ```
-PlanId,StepId,ActionType,ActionName,Input,Expected
-LoginTest,1,xUI,xNavigate,login_url,
-LoginTest,2,xUI,xClick,username_field,
-LoginTest,3,xUI,xType,username_field;myuser,
+PlanId,StepId,StepInfo,ActionType,ActionName,Input,Output,Expected,Critical
+PLoginTest,1,Open login page,xUI,xOpenBrowser,,,Y
+PLoginTest,2,Go to URL,xUI,xNavigate,login_url,,,Y
+PMath_Addition,1,Add numbers,xMath,xAdd,v1;v2,sum,,Y
+PMath_Addition,2,Check result,xMath,xCompare,sum;expected,Pass/Fail,Pass,Y
 ```
 
 ### Designs File (y3Designs)
 
-Contains **data** used by your actions. Provides:
-- Variable names
-- Different data sets (D1, D2, D3, etc.)
-- Test data values
+Contains **data** (variables) used in Input and Expected in y2Actions. One row per variable.
 
-**Example:**
+**Columns (exact):** `Type`, `DataName`, `D1`, `D2`, `D3`
+
+| Column   | Description |
+|----------|-------------|
+| Type     | Category (e.g. UI, Math, API). |
+| DataName | Variable name used in Input/Expected in y2Actions (e.g. login_url, v1, base_url). |
+| D1       | Value when DesignId is D1. |
+| D2       | Value when DesignId is D2. |
+| D3       | Value when DesignId is D3. (Add D4, D5, … as needed.) |
+
+**Example (y3Designs.csv):**
 ```
-Type,DataName,D1,D2
-UI,login_url,https://example.com/login,https://test.example.com/login
-UI,username_field,css==input[name="username"],css==input[id="user"]
+Type,DataName,D1,D2,D3
+UI,login_url,https://example.com/login,https://test.example.com/login,https://staging.example.com/login
+UI,username_field,css=#username,css=#user,css=#login
+Math,v1,10,20,5
+Math,v2,5,10,2
+Math,expected,15,30,7
+API,base_url,https://api.example.com,https://api.test.com,
 ```
 
 ## Viewing Results
@@ -187,10 +221,10 @@ The **tags** feature allows you to run only specific plans that match certain ta
 
 In `y1Plans.csv`:
 ```
-PlanId,PlanName,DesignId,Run,Tags
-Math_Addition,Verify_Math_Addition,D1,Y,Math
-UI_Login,Verify_Login_Process,D1,Y,UI
-API_Weather,Get_Weather_Data,D1,Y,Weather
+PlanId,PlanName,DesignId,Run,Tags,Output
+PMath_Addition,Verify_Math_Addition,D1,Y,Math,addition_result
+PUI_Login,Verify_Login_Process,D1,Y,UI,login_success
+PAPI_Weather,Get_Weather_Data,D1,Y,Weather,weather_ok
 ```
 
 In `fStart.json`:

@@ -287,3 +287,24 @@ FoXYiZ is provided as-is for automation and testing purposes. Please refer to th
 
 *Make automation accessible to everyone.*
 
+## Example Prompts for an LLM Agent
+
+Use this README as context. Here are sample prompts an end user can ask an LLM agent to understand and work with FoXYiZ:
+
+- "Give me a one-paragraph summary of FoXYiZ and its key capabilities."
+- "Step-by-step: how do I run the included example automation using `fStart.json`?"
+- "Create a minimal `y1Plans`, `y2Actions`, and `y3Designs` set that logs into https://example.com and verifies the dashboard."
+- "Explain the difference between Plans, Actions, and Designs with a short example for each."
+- "How do I run only plans tagged `Math`? Show a sample `fStart.json` and a `y1Plans` row."
+- "A run failed with 'element not found' in the logs — what troubleshooting steps should I try?"
+- "How can I run the browser headless and increase timeout? Show the config changes."
+- "Convert this Designs example (Excel) into CSV and JSON equivalents."
+- "Which command-line flags are available and what do they do? Provide concise examples."
+- "How would I add a custom action type that calls an external script? Outline required files and config changes."
+- "What are recommended practices for storing API keys and secrets when using FoXYiZ?"
+- "Give three small example automations I can run now (Math addition, API weather check, UI login) with brief plan/action/design snippets."
+
+Tips for prompting the agent:
+- Provide relevant file content (e.g., `fStart.json`, a snippet of `y2Actions`) when asking for edits or debugging.
+- Ask for "step-by-step" or "diff" if you want exact file changes to apply.
+- Mention the target OS or runtime (Windows, headless, etc.) when asking about execution details.

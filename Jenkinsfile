@@ -24,7 +24,7 @@ pipeline {
 
         stage('Run FoXYiZ Framework') {
             steps {
-                bat '.\FoXYiZ.exe --config .\fStart.json'
+                bat ".\\FoXYiZ.exe --config .\\fStart.json"
             }
         }
 

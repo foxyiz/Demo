@@ -9,12 +9,6 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                bat 'pip install -r requirements.txt'
-            }
-        }
-
         stage('Run FoXYiZ Framework') {
             steps {
                 bat ".\\FoXYiZ.exe --config .\\fStart.json"

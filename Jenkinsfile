@@ -11,7 +11,11 @@ pipeline {
 
         stage('Run FoXYiZ Framework') {
             steps {
-                bat ".\\FoXYiZ.exe --config .\\fStart.json"
+                bat '''
+        chcp 65001
+        set PYTHONIOENCODING=utf-8
+        .\\FoXYiZ.exe --config .\\fStart.json
+        '''
             }
         }
 

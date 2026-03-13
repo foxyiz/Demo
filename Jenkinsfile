@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                echo 'Checking out repository...'
-                checkout scm
-            }
-        }
-
         stage('Verify Python') {
             steps {
                 bat 'python --version'

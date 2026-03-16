@@ -2,7 +2,7 @@
   "configs": [ "y/FoXYiZ.json"],
   "thread_count": 4,
   "timeout": 10,
-  "headless": true,
+  "headless": false,
   "debug": false,
   "tags": []
 }

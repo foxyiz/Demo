@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        stage('Run FoXYiZ Framework') {
+        stage('Run FoXYiZ Automation Framework') {
             steps {
                 bat '''
         chcp 65001

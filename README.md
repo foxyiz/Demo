@@ -31,11 +31,27 @@ FoXYiZ is a **low-code/no-code automation framework(LCNC)** that follows a simpl
 
 **That's it!** No additional installation or setup required. The executable is self-contained and includes everything you need.
 
+**Typical layout:** The executable and main config live in the **`f`** folder. Your automation data (**`y/`**), results (**`z/`**), and this README sit in the **installation root** (the parent of **`f`**):
+
+```
+YourFoXYiZFolder/          ← installation root (README, y/, z/, …)
+  f/
+    Foxyiz.exe
+    fStart.json
+    .env                     ← optional; see secrets section below
+  y/
+  …
+```
+
+Place your **`.env`** file in **`f/`** (next to `Foxyiz.exe` and `fStart.json`)—see [Sensitive values (`.env`)](#sensitive-values-env).
+
 ### Step 2: Verify Installation
 
 1. Open a command prompt or terminal
-2. Navigate to the FoXYiZ folder
-3. Run: `Foxyiz.exe --help`
+2. Navigate to your **FoXYiZ installation root** (the folder that contains the **`f`** folder)
+3. Run: `f\Foxyiz.exe --help` (on Windows) or `f/Foxyiz.exe --help` (on macOS/Linux)
+
+Alternatively, `cd` into **`f`** and run `Foxyiz.exe --help`.
 
 If you see the help message, you're ready to go!
 
@@ -43,12 +59,13 @@ If you see the help message, you're ready to go!
 
 ### Running Your First Automation
 
-1. **Open the example configuration file** (`fStart.json`) in any text editor
-2. **Run FoXYiZ** with the default configuration:
+1. **Open the example configuration file** **`f/fStart.json`** (inside the **`f`** folder) in any text editor
+2. **Run FoXYiZ** from your **installation root** with the default configuration (FoXYiZ finds `fStart.json` next to the executable):
    ```
-   Foxyiz.exe --config fStart.json
+   f\Foxyiz.exe
    ```
-3. **View your results** in the `z` folder - you'll find:
+   Or, after `cd f`: `Foxyiz.exe` (same default). To pass the config explicitly: `f\Foxyiz.exe --config fStart.json` (paths are resolved from the **`f`** folder first).
+3. **View your results** in the **`z`** folder at the installation root (next to **`y/`**)—you'll find:
    - Results in CSV format
    - Interactive HTML dashboard
    - Detailed execution logs
@@ -68,10 +85,19 @@ If you see the help message, you're ready to go!
 
 3. **Create a configuration file** (`.json`) that points to your files
 
-4. **Run your automation**:
+4. **Run your automation** from the installation root, for example:
    ```
-   Foxyiz.exe --config your-config.json
+   f\Foxyiz.exe --config your-config.json
    ```
+   Put custom main configs (JSON) in **`f/`** unless you use an absolute path.
+
+### Storing passwords, API keys, and email addresses
+
+Put sensitive values—**email addresses**, **passwords**, **API keys**, tokens, and similar—in a **`.env`** file in the **`f`** folder—**the same folder as `Foxyiz.exe` and `fStart.json`**. FoXYiZ also looks for `.env` in the **current working directory** if you run the exe from elsewhere, but the recommended location is **`f/.env`**.
+
+Do **not** put secrets in your Plans, Actions, or Designs files if those files are shared, backed up to the cloud, or checked into source control.
+
+FoXYiZ loads `.env` into the environment so your automation can use those values (for example when resolving variables in **y3Designs** or when actions read environment variables). Keep `.env` private and do not share it. See [Sensitive values (`.env`)](#sensitive-values-env) under Configuration Options for more detail.
 
 ## File Formats Supported
 
@@ -115,7 +141,7 @@ Defines **what** you want to automate. Each row is a plan.
 | PlanName  | Human-readable name. |
 | DesignId  | One or more design IDs separated by `;` (e.g. D1 or D1;D2). Variables from y3Designs are chosen by this. |
 | Run       | Y = run this plan, N = skip. |
-| Tags      | Optional; used with `tags` in fStart.json to filter which plans run. |
+| Tags      | Optional; used with `tags` in **`f/fStart.json`** to filter which plans run. |
 | Output    | Optional description. |
 
 **Example (y1Plans.csv):**
@@ -180,7 +206,7 @@ API,base_url,https://api.example.com,https://api.test.com,
 
 ## Viewing Results
 
-After running FoXYiZ, check the `z` folder for your results:
+After running FoXYiZ, check the **`z`** folder (usually at your **installation root**, beside **`y/`**) for your results:
 
 📊 **Results CSV** - Detailed execution results in spreadsheet format  
 📈 **HTML Dashboard** - Interactive visual dashboard showing pass/fail status  
@@ -188,7 +214,7 @@ After running FoXYiZ, check the `z` folder for your results:
 
 ## Configuration Options
 
-You can customize FoXYiZ behavior through the configuration file:
+You can customize FoXYiZ behavior through the main configuration file **`f/fStart.json`**:
 
 ```json
 {
@@ -208,13 +234,23 @@ You can customize FoXYiZ behavior through the configuration file:
 - **debug**: Enable detailed debugging (true/false)
 - **tags**: Filter plans by tags - only run plans with matching tags (optional)
 
+### Sensitive values (`.env`)
+
+Store **email IDs**, **passwords**, **API keys**, and other secrets in a **`.env`** file inside the **`f`** folder—**next to `Foxyiz.exe` and `fStart.json`**. That is the first place FoXYiZ looks. It then checks the **folder you run the command from** (current working directory), so you can use a root-level `.env` only if you always launch FoXYiZ from that directory; the reliable choice is **`f/.env`**.
+
+Do **not** put `.env` under **`y/`** unless you have a deliberate layout and understand path resolution.
+
+Use one variable per line in the usual form `NAME=value` (no spaces around `=` unless your tool requires quotes for values with spaces). FoXYiZ loads this file into the environment so values can be used in your Designs and by actions that expect environment variables.
+
+**Do not** paste secrets into CSV, JSON, or Excel design files that you email, commit to git, or publish. Treat **`.env`** like a private key file: keep it on your machine, exclude it from backups you share, and never commit it to a repository.
+
 ### Using Tags to Filter Plans
 
 The **tags** feature allows you to run only specific plans that match certain tags. This is useful when you have many plans but only want to execute a subset.
 
 **How it works:**
 1. In your `y1Plans` file, add a `Tags` column and assign tags to each plan
-2. In `fStart.json`, add a `tags` array with the tags you want to run
+2. In **`f/fStart.json`**, add a `tags` array with the tags you want to run
 3. Only plans with matching tags will be executed
 
 **Example:**
@@ -227,7 +263,7 @@ PUI_Login,Verify_Login_Process,D1,Y,UI,login_success
 PAPI_Weather,Get_Weather_Data,D1,Y,Weather,weather_ok
 ```
 
-In `fStart.json`:
+In **`f/fStart.json`**:
 ```json
 {
   "configs": ["y/Math.json"],
@@ -259,6 +295,7 @@ To run all plans regardless of tags, either:
 💡 **Test Incrementally** - Test one plan at a time before running everything  
 💡 **Check Logs** - Review log files if something doesn't work as expected  
 💡 **Use Tags** - Organize your plans with tags for easy filtering  
+💡 **Protect Secrets** - Keep email addresses, passwords, and API keys in **`f/.env`** (next to the executable), not in shared automation files  
 
 ## Getting Help
 
@@ -292,10 +329,10 @@ FoXYiZ is provided as-is for automation and testing purposes. Please refer to th
 Use this README as context. Here are sample prompts an end user can ask an LLM agent to understand and work with FoXYiZ:
 
 - "Give me a one-paragraph summary of FoXYiZ and its key capabilities."
-- "Step-by-step: how do I run the included example automation using `fStart.json`?"
+- "Step-by-step: how do I run the included example automation using `f/fStart.json`?"
 - "Create a minimal `y1Plans`, `y2Actions`, and `y3Designs` set that logs into https://example.com and verifies the dashboard."
 - "Explain the difference between Plans, Actions, and Designs with a short example for each."
-- "How do I run only plans tagged `Math`? Show a sample `fStart.json` and a `y1Plans` row."
+- "How do I run only plans tagged `Math`? Show a sample `f/fStart.json` and a `y1Plans` row."
 - "A run failed with 'element not found' in the logs — what troubleshooting steps should I try?"
 - "How can I run the browser headless and increase timeout? Show the config changes."
 - "Convert this Designs example (Excel) into CSV and JSON equivalents."
@@ -305,6 +342,6 @@ Use this README as context. Here are sample prompts an end user can ask an LLM a
 - "Give three small example automations I can run now (Math addition, API weather check, UI login) with brief plan/action/design snippets."
 
 Tips for prompting the agent:
-- Provide relevant file content (e.g., `fStart.json`, a snippet of `y2Actions`) when asking for edits or debugging.
+- Provide relevant file content (e.g., `f/fStart.json`, a snippet of `y2Actions`) when asking for edits or debugging.
 - Ask for "step-by-step" or "diff" if you want exact file changes to apply.
 - Mention the target OS or runtime (Windows, headless, etc.) when asking about execution details.

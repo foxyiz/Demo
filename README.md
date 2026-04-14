@@ -35,10 +35,10 @@ FoXYiZ is a **low-code/no-code automation framework(LCNC)** that follows a simpl
 
 ```
 YourFoXYiZFolder/          ← installation root (README, y/, z/, …)
+  .env                     ← optional; see secrets section below
   f/
     Foxyiz.exe
     fStart.json
-    .env                     ← optional; see secrets section below
   y/
   …
 ```
@@ -288,6 +288,21 @@ To run all plans regardless of tags, either:
 
 **Note:** Tag matching is case-insensitive. If you specify tags but your plans don't have a `Tags` column, all plans will run with a warning message.
 
+## CLI flags and LLM workflows
+
+Only **one** of `--build`, `--analyze`, `--heal`, or `--loop` may be used on a single command line. Ordinary test runs do not use these flags.
+
+Set **`OPENAI_API_KEY`** in your environment or **`.env`** (see [Sensitive values (`.env`)](#sensitive-values-env)) for any `--build`, `--analyze`, `--heal`, or `--loop` run.
+
+| Flag | Arguments | Purpose |
+|------|-----------|---------|
+| `--config` | Path to main JSON | Main config. Default: **`f/fStart.json`** in development; beside the executable when the app is frozen. |
+| `--debug` | *(none)* | Verbose debug logging and extra artifacts (for example under results **`_debug`**). |
+| `--build` | *(none)* | Reads **`BUILD.md`**, calls OpenAI to generate **`y/<ypad_name>/y1Plans.csv`**, **`y2Actions.csv`**, **`y3Designs.csv`**, writes **`y/<ypad_name>.json`**, sets **`f/fStart.json`** `configs` to that suite only, then runs the framework. |
+| `--analyze` | `y/<Suite>/` or `y/<Suite>` or suite folder name | Runs that suite once, sends suite JSON + CSVs + latest **`z/`** results to OpenAI, **prints suggestions only** (no file changes). Requires **`OPENAI_API_KEY`**. |
+| `--heal` | Same path style as `--analyze` | Runs the suite, then sends context + results to OpenAI; validates returned CSVs; prints unified diffs, then **overwrites** the first yPlans / yActions / yDesigns paths in the suite JSON. Requires **`OPENAI_API_KEY`**. |
+| `--loop` | Same path style as `--analyze` | Runs **run → heal** up to **three** times, stopping as soon as **all plans pass**; a **final verify** suite run runs after the last heal if needed. Requires **`OPENAI_API_KEY`**. |
+
 ## Tips for Success
 
 💡 **Start Simple** - Begin with basic plans and gradually add complexity  
@@ -336,7 +351,7 @@ Use this README as context. Here are sample prompts an end user can ask an LLM a
 - "A run failed with 'element not found' in the logs — what troubleshooting steps should I try?"
 - "How can I run the browser headless and increase timeout? Show the config changes."
 - "Convert this Designs example (Excel) into CSV and JSON equivalents."
-- "Which command-line flags are available and what do they do? Provide concise examples."
+- "Which command-line flags are available (`--config`, `--debug`, `--build`, `--analyze`, `--heal`, `--loop`) and what do they do? Provide concise examples."
 - "How would I add a custom action type that calls an external script? Outline required files and config changes."
 - "What are recommended practices for storing API keys and secrets when using FoXYiZ?"
 - "Give three small example automations I can run now (Math addition, API weather check, UI login) with brief plan/action/design snippets."

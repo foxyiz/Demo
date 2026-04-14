@@ -1,0 +1,42 @@
+---
+ypad_name: Cric
+---
+
+## Purpose
+
+End-to-end **browser** checks against the real site [https://www.espncricinfo.com/](https://www.espncricinfo.com/): open a session, load cricket pages, wait for match UI, and **read visible score text** for a **live** match and for the **most recent** (or top-listed) match.
+
+Use only actions that exist in `x/xCapa.csv` (primarily **xUI**: `xOpenBrowser`, `xNavigate`, `xWaitFor`, `xClick`, `xGetText`, `xGetTitle`, `xGetCurrentUrl`, `xCloseBrowser`). Resolve URLs and locators from **y3Designs** (`browser_type`, `cricinfo_home_url`, `live_scores_url`, CSS/XPath strings, etc.). Chain steps with `{{step:StepId}}` in `Input` / `Expected` when a later step needs the prior step’s **Output**.
+
+## Plans
+
+1. **PLiveScoreStrip** — **Goal:** Fetch the **visible score line** for a **live** match (runs/wickets, teams, or “Live” state) from the homepage or live-scores view.
+   - `xOpenBrowser` with `browser_type` from design.
+   - `xNavigate` to `cricinfo_home_url` **or** `live_scores_url` (prefer the URL that shows the live strip on load).
+   - `xWaitFor` on `locator_live_match_container` (or equivalent) until the live block is present.
+   - `xGetText` on `locator_live_score_text` (first live match row / ribbon). **Expected:** leave blank if you only need to prove the element was read; otherwise set **Expected** to the exact string the engine should match (same plan/design run), knowing the engine does **string equality** on non-numeric outputs.
+   - `xCloseBrowser`.
+   - **Critical:** `y` on steps that must pass for the plan to mean “we saw live score text.”
+
+2. **PMostRecentMatchScore** — **Goal:** Open the **most recent** or **top-listed** match (often the first result row on the live-scores page) and read its **score or header** from the match page.
+   - `xOpenBrowser` (`browser_type`).
+   - `xNavigate` to `live_scores_url` (e.g. live-cricket-score index).
+   - `xWaitFor` `locator_match_list_ready`.
+   - `xClick` `locator_first_match_link` (or the link for the most recent completed fixture if that is what the row represents—document in `StepInfo`).
+   - `xWaitFor` `locator_match_page_score_or_title` on the match detail page.
+   - `xGetText` on that locator **or** `xGetTitle` / `xGetCurrentUrl` if you are only asserting navigation; prefer **score/header text** in `xGetText` for “fetch score.”
+   - `xCloseBrowser`.
+
+3. **PCricinfoPageLoad** (optional sanity) — **Goal:** Confirm the site responds and branding is correct before deep locators.
+   - `xOpenBrowser`, `xNavigate` to `cricinfo_home_url`, `xWaitFor` `locator_body_or_main`, `xGetTitle` with **Expected** set to the **exact** title string your browser returns (tune once from a manual run), or skip strict **Expected** if you only need load proof.
+
+## Tags
+
+Use tag **All** on every plan in **y1Plans.csv** so optional `tags` filtering in `f/fStart.json` does not exclude them.
+
+## Notes
+
+- **Network + browser:** needs a real browser driver (e.g. Chrome + matching driver) and outbound HTTPS; not an offline smoke test.
+- **Locators:** Cricinfo changes DOM often; store selectors in **y3Designs** and refresh when the UI shifts. Prefer stable attributes (data-testid if present) over brittle nth-child-only CSS.
+- **Expected values:** For `xGetText`, dynamic scores change every ball—use blank **Expected** for capture-only steps, or split “read” vs “compare” only when you can supply a fixed **Expected** (e.g. title).
+- Regenerate CSVs via LLM: `python f/fEngine.py --build` with `OPENAI_API_KEY` sets.

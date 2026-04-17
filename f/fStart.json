@@ -1,8 +1,10 @@
 {
-  "configs": [ "y/Mix.json", "y/FoXYiZ.json"],
+  "configs": [
+    "y/Mix.json"
+  ],
   "thread_count": 4,
   "timeout": 10,
   "headless": false,
   "debug": false,
-  "tags": ["petstore"]
+  "tags": []
 }
